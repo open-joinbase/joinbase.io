@@ -1,0 +1,73 @@
+{% macro footer() %}
+<footer class="site-footer text-muted">
+	<div class="container">
+		<div class="row">
+
+			<div class="d-flex justify-content-between">
+				<div class="col-sm-12 col-md-6">
+					<h5>JoinBase</h5>
+					<p class="text-justify">The first, fastest, end-to-end IoT Database.</p>
+				</div>
+
+				<div class="col-xs-6 col-md-2"></div>
+
+				<div class="col-xs-6 col-md-2">
+					<h6>JoinBase</h6>
+					<ul class="footer-links">
+						<li><a href="#">Cloud</a></li>
+						<li><a href="/blog/">Blog</a></li>
+						<li><a href="/careers/">Careers</a></li>
+						<li><a href="/contact/">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-2">
+					<h6>Community</h6>
+					<ul class="footer-links">
+						<li><a href="https://github.com/open-joinbase/joinbase">GitHub</a></li>
+						<li><a href="https://join.slack.com/t/joinbase-workspace/shared_invite/zt-yspfmqlh-Uj_Yzd5ZCuVD7YUU8csy_w">Slack</a></li>
+						<!-- <li><a href="/privacy-policy/">Stack Overflow</a></li> -->
+						<li><a href="https://twitter.com/joinbase_db">Twitter</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-2">
+					<h6>More</h6>
+					<ul class="footer-links">
+						<li><a href="/docs/getting-started/">Get Started</a></li>
+						<li><a href="/docs/getting-started/introduction/">Documentation</a></li>
+						<li><a href="/benchmark/">Benchmark</a></li>
+						<li><a href="/docs/getting-started/tutorials/">Tutorials</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="d-flex justify-content-between">
+			<div>
+				<p class="copyright-text">Copyright &copy; 2021
+					<a href="#">JoinBase</a>
+				</p>
+			</div>
+			<div>
+				<p class="copyright-text"><a href="/privacy-policy/">Privacy</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9HXZKJRV2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W9HXZKJRV2');
+</script>
+
+</footer>
+{% endmacro %}

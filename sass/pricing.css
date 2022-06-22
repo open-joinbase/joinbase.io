@@ -1,0 +1,167 @@
+body{
+  background-color: #f7f7f7;
+  margin-top:20px;}
+/* pricing tables */
+.pricing-table {
+background: #e9f0f4;
+text-align: center;
+margin: 15px 0;
+min-width: 300px;
+}
+
+.pricing-table ul, .pricing-table ol {
+margin-bottom: 0;
+padding-left: 0;
+}
+
+.pricing-title {
+font-size: 1.5rem;
+font-weight: 700;
+padding: 30px;
+margin-bottom: 0;
+}
+
+.pricing-table-price {
+background: #cdd4d8;
+font-weight: 700;
+padding: 30px;
+margin-bottom: 30px;
+}
+
+.pricing-table-price.w-rounded-price {
+display: table;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+margin: 0 auto 30px auto;
+padding: 0;
+}
+
+.rounded-price {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+
+.rounded-price .pricing-price {
+font-size: 1.75rem;
+}
+
+.rounded-price .pricing-currency {
+vertical-align: 10px;
+}
+
+.pricing-table-price p {
+color: #000;
+margin-bottom: 0;
+}
+
+.pricing-currency {
+font-size: 1rem;
+font-weight: 700;
+vertical-align: 25px;
+}
+
+.pricing-price {
+font-size: 3rem;
+font-weight: 700;
+}
+
+.pricing-period {
+font-weight: 700;
+}
+
+.pricing-table-content li {
+margin-bottom: 15px;
+}
+
+.pricing-table-button {
+padding: 15px 0 35px;
+}
+
+.featured.pricing-table {
+background: #9c64b8;
+}
+
+.featured.pricing-table .pricing-title {
+color: #fff;
+}
+
+.featured.pricing-table .pricing-table-content ul li {
+color: #eee;
+}
+
+.featured.pricing-table .pricing-table-price {
+background: #8853a1;
+}
+
+.featured.pricing-table .pricing-table-price p {
+color: #fff;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bg-info-hover {
+  background-color: #8b2671 !important;
+  
+}
+.bg-info {
+  background-color: #9c64b8 !important;
+}
+
+.bg-primary-hover {
+  background-color: #2775b6 !important;
+}
+.bg-primary {
+  background-color: #21b9d5 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-black {
+  color: #1d2d35 !important;
+}
+
+.btn-bg {
+  color: #000 !important;
+  background-color: #adb5bf !important;
+}
+
+.bg-com-hover {
+  background-color: #8b2671 !important;
+}
+.bg-com {
+  background-color: #d462b7 !important;
+}
+
+.bg-cloud-hover {
+  background-color: #13a4b5 !important;
+}
+.bg-cloud {
+  background-color: #57deed !important;
+}
+
+.bg-es-hover {
+  background-color: #e88a00 !important;
+}
+.bg-es {
+  background-color: #ffbb58 !important;
+}
+
+.bg-ed-hover {
+  background-color: #2775b6 !important;
+}
+.bg-ed {
+  background-color: #70ade0 !important;
+}
+
+.bg-ep-hover {
+  background-color: #0c8918 !important;
+}
+.bg-ep {
+  background-color: #0ca618 !important;
+}

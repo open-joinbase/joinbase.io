@@ -1,0 +1,37 @@
+name: Build Site Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: download zola
+      run: |
+          wget https://github.com/getzola/zola/releases/download/v0.15.0/zola-v0.15.0-x86_64-unknown-linux-gnu.tar.gz
+          tar -zvxf zola-v0.15.0-x86_64-unknown-linux-gnu.tar.gz
+    - name: Zola build
+      run: ./zola build
+    - name: Pack files
+      run: |
+        mkdir ./public/assets
+        zip -r site.zip public  
+    - name: Create Site Release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: site.zip
+        tag: ${{ github.ref }}
+        overwrite: true
+        prerelease: true
+        body: "nightly build."
