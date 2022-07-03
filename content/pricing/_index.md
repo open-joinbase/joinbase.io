@@ -89,6 +89,7 @@ class = "page single"
     <div class="pricing-table-content text-black">
       <ul>
         <li><strong>All in Enterprise Standard Edition</strong></li>
+        <li><strong>IoT Domain Data Platform Planning and Consultant</strong></li>
         <li><strong>Performance Optimization Consultant</strong></li>
         <li><strong>Performance Optimization Exclusive Period</strong></li>
       </ul>
