@@ -90,8 +90,9 @@ Allowed specific partition functions:
 |ymdh2/ymdh4/ymdh6/ymdh12| variant of ymdh with `DateTime` type, but the interval gap is 2/4/6/12-hour |1|
 |rem| reminder of an Int-like types|1|
 
-    + NOTE
-    For more performance-ergonomic, all no-nullable types (this is the default case) in the `CREATE TABLE` statement has a default value: empty string for String, 0 for int-like and float-like, false for boolean, and unix epoch timestamp 0 (ISO 8601: 1970-01-01T00:00:00Z) for Date and DateTime. It is allow to use `default` constraint to change the default value if necessary. See more for [performance tunning](/docs/references/performance#Data_Type).
+NOTE
+
+For more performance-ergonomic, all no-nullable types (this is the default case) in the `CREATE TABLE` statement has a default value: empty string for String, 0 for int-like and float-like, false for boolean, and unix epoch timestamp 0 (ISO 8601: 1970-01-01T00:00:00Z) for Date and DateTime. It is allow to use `default` constraint to change the default value if necessary. See more for [performance tunning](/docs/references/performance#Data_Type).
 
 * show databases
 ```sql
