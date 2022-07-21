@@ -9,14 +9,14 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "We provide a dedicated MQTT bridge to allow existing broker-based architectures for experiencing the joinbase seamlessly."
+lead = "We provide a dedicated MQTT bridge to allow existing broker-based architectures for experiencing the JoinBase seamlessly."
 toc = true
 top = false
 +++
 
-For fully access to all innovations and powers of joinbase, it is recommended to use [the client direct connection mode](/docs/references/mqtt/). 
+For fully access to all innovations and powers of JoinBase, it is recommended to use [the client direct connection mode](/docs/references/mqtt/). 
 
-However, If the above direct connection mode cannot be achieved immediately, you can use this working mode. We also provide an dedicated MQTT bridge for existing users, who want to explore the joinbase without making any changes to your existing architectures.
+However, If the above direct connection mode cannot be achieved immediately, you can use this working mode. We also provide an dedicated MQTT bridge for existing users, who want to explore the JoinBase without making any changes to your existing architectures.
 
 Finally, please note that, the message writing performance in the bridge mode will be highly limited by your front-end broker, usually by orders of magnitude lower.
 

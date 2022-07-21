@@ -9,20 +9,20 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "Basic configuration for joinbase."
+lead = "Basic configuration for JoinBase."
 toc = true
 top = false
 +++
 
 ## Install
 
-joinbase does not need to be installed. The joinbase release is shipped in a compressed package. Just decompress it to any directory of your machine. Then, go to decompressed directory to use. 
+JoinBase does not need to be installed. The JoinBase release is shipped in a compressed package. Just decompress it to any directory of your machine. Then, go to decompressed directory to use. 
 
 ## Prerequisites
 
 * Operation system
 
-Currently, joinbase only supports Linux distributions with modern kernels, for example , [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/), [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2). Feel free to ask for help if you have problems on the running operation system. ([Windows WSL2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) may be also supported for development and functional evaluation.)
+Currently, JoinBase only supports Linux distributions with modern kernels, for example , [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/), [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2). Feel free to ask for help if you have problems on the running operation system. ([Windows WSL2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) may be also supported for development and functional evaluation.)
 
 * Storage
 

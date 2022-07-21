@@ -9,14 +9,14 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "In the joinbase, we provide a payload mapping mechanism to make users easily mapping any complex JSON data to the joinbase's structured table."
+lead = "In the JoinBase, we provide a payload mapping mechanism to make users easily mapping any complex JSON data to the JoinBase's structured table."
 toc = true
 top = false
 +++
 
 ## Payload
 
-Currently, joinbase supports two kinds of payload in the body of MQTT message: [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) and [JSON](https://en.wikipedia.org/wiki/JSON).
+Currently, JoinBase supports two kinds of payload in the body of MQTT message: [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) and [JSON](https://en.wikipedia.org/wiki/JSON).
 
 It is planned to support more payload formats in the future.
 
@@ -35,7 +35,7 @@ It is planned to support more payload formats in the future.
 
 Let's see an example about, how the automatic mapping without explicit mapping definition works:
 
-Connect the test joinbase database.
+Connect the test JoinBase database.
 
 ```bash
 $ psql -U username -d test_db -h 127.0.0.1
@@ -47,7 +47,7 @@ Create a database and a table base default mapping rule.
 > create table test_tab(ci8 Int8, cu64 Int64, cts DateTime);
 ```
 
-Write a corresponding data to the joinbase default MQTT broker by Mosquitto tool [^footnote].
+Write a corresponding data to the JoinBase default MQTT broker by Mosquitto tool [^footnote].
 
 in CSV:
 ```bash
@@ -77,7 +77,7 @@ If you message payload design does not follow the default automatic mapping rule
 
 Custom mapping rule definition is specified in the table attribute name `JSON_MAPPINGS` when you create the table schema. It will be allowed to change in the latter with `alter` command.
 
-Custom mapping is targeted to help on the conversion from semi-structured data formats to the structured table, and finally help users to get the top analytical performance uniquely provided by the joinbase. See the [`denormalization`](/docs/references/performance/) section for more 
+Custom mapping is targeted to help on the conversion from semi-structured data formats to the structured table, and finally help users to get the top analytical performance uniquely provided by the JoinBase. See the [`denormalization`](/docs/references/performance/) section for more 
 
 1. Any fixed JSON structure can be 1-1 mapped to the structured table.
 2. For JSON messages which have the dynamic array structure, an flattening mapping mech to allow flattening array to multiple records.
@@ -112,7 +112,7 @@ create table test_tab1(
 JSON_MAPPINGS ci8 <- '/a/b', cu64 <- '/c/0', cts <- '/d/1/e';
 ```
 
-> Write a corresponding JSON data by the joinbase default MQTT broker.
+> Write a corresponding JSON data by the JoinBase default MQTT broker.
 ```bash
 $ mosquitto_pub -d -t /test_db/test_tab1 -h 127.0.0.1 -p 1883 -u username -P password -m '{"a":{"b": -1},"c": [100],"d":["", {"e": "2021-09-08T13:42:29"}]}'
 ```
@@ -131,7 +131,7 @@ $ mosquitto_pub -d -t /test_db/test_tab1 -h 127.0.0.1 -p 1883 -u username -P pas
 
 Dynamics will compromise the performance. So, if you can guarantee the 1-1 mapping between the JSON structure to the table, you get the best performance.
 
-For JSON with the dynamic array which cannot be optimized right away, joinbase provides a flattening mapping, according to the [`denormalization`](/docs/references/performance/) principle. 
+For JSON with the dynamic array which cannot be optimized right away, JoinBase provides a flattening mapping, according to the [`denormalization`](/docs/references/performance/) principle. 
 
 In the path pattern syntax in the `JSON_MAPPINGS`, one array and only one array now can be flatten with other top fields into multiple table rows/records via wildcard symbol `*`.
 
@@ -185,7 +185,7 @@ JSON_MAPPINGS
 mosquitto_pub -d -t /abc/sensors -h 127.0.0.1 -p 1883 -u abc -P abc -m '{"timestamp":1636666666,"dev_id":"id-01","dev_name":"abc","data":[[1,25.1],[2,25.5],[3,25.9]]}'
 ```
 
-> Check the saved records in joinbase:
+> Check the saved records in JoinBase:
 
 ```sql
 abc=> select * from sensors;

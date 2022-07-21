@@ -9,22 +9,22 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "MQTT Protocol is the first-class citizen of joinbase."
+lead = "MQTT Protocol is the first-class citizen of JoinBase."
 toc = true
 top = false
 +++
 
-In joinbase, we provide a MQTT server, can be seen as a common MQTT broker. So IoT devices just send MQTT messages to joinbase server, then joinbase will store data reliably for you. Finally, you can do fastest real-time IoT data analysis on top of stored bigdata via an easy SQL compatible language at any moment. All these are done in the one-stop joinbase. There is no need to use any other systems or tools.
+In JoinBase, we provide a MQTT server, can be seen as a common MQTT broker. So IoT devices just send MQTT messages to JoinBase server, then JoinBase will store data reliably for you. Finally, you can do fastest real-time IoT data analysis on top of stored bigdata via an easy SQL compatible language at any moment. All these are done in the one-stop JoinBase. There is no need to use any other systems or tools.
 
 ### Working Modes
 
-There are two common working modes or scenarios for joinbase:
+There are two common working modes or scenarios for JoinBase:
 
 1. Connections from direct MQTT clients on kinds of IoT devices.
 
 **This mode is highly recommended** because we support the top performance in world record level all-in-one product. 
 
-If you want to use existed brokers, you can start two connections in your device to connect: one for your broker and one for the joinbase.
+If you want to use existed brokers, you can start two connections in your device to connect: one for your broker and one for the JoinBase.
 
 2. Connections from MQTT brokers on [the bridge mode](/docs/references/bridge/). 
 
@@ -36,5 +36,5 @@ In order for the message to be correctly stored in the appropriate database tabl
 
 |    Table             |         MQTT Message             |
 | :------------------- | :------------------------ | 
-| db_name.table_name   | (3.1.1) topic: /db_name/table_name  <br/>  (5.0) user properties: { "joinbase.database": "db_name", "joinbase.table": "table_name"} |
-| fields    | Payload. <br/>  joinbase supports [a payload mapping mechanism](/docs/references/mapping/) for mapping the payload to the database table. |
+| db_name.table_name   | (3.1.1) topic: /db_name/table_name  <br/>  (5.0) user properties: { "JoinBase.database": "db_name", "JoinBase.table": "table_name"} |
+| fields    | Payload. <br/>  JoinBase supports [a payload mapping mechanism](/docs/references/mapping/) for mapping the payload to the database table. |

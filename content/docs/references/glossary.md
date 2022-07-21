@@ -16,7 +16,7 @@ top = false
 
 #### End-to-end Database
 
-The existing databases or data systems require its own clients or intermediate processing pipelines or preprocessed formats to make data correctly written into the databases. In contrast, the end-to-end IoT database, like joinbase, supports data (a.k.a. domain messages)to be directly written to the end of data sink (a.k.a. the database) from the end of data production sources (a.k.a. devices).
+The existing databases or data systems require its own clients or intermediate processing pipelines or preprocessed formats to make data correctly written into the databases. In contrast, the end-to-end IoT database, like JoinBase, supports data (a.k.a. domain messages)to be directly written to the end of data sink (a.k.a. the database) from the end of data production sources (a.k.a. devices).
 
 An end-to-end database is proposed, by us, as an out-of-the-box database for non-professional domain users. The end-to-end database evolves through user orientated characteristics, not based on technical features.
 
@@ -28,13 +28,13 @@ More formally, **an end-to-end database meets the following <sup>3</sup>E standa
 
 #### IoT Native
 
-In joinbase, MQTT messages becomes the first-class citizen of database. We support ten million concurrent physical connections from massive IoT (Internet of Things) devices to ingest near ten million one-by-one messages in one node. The whole database is built and optimized for unlimited IoT bigdata. 
+In JoinBase, MQTT messages becomes the first-class citizen of database. We support ten million concurrent physical connections from massive IoT (Internet of Things) devices to ingest near ten million one-by-one messages in one node. The whole database is built and optimized for unlimited IoT bigdata. 
 
 In all databases, we know the internet of things best.
 
 #### DevOps Free
 
-In joinbase, we carefully craft a dedicate database for unlimited IoT bigdata. You don't need a dedicated joinbase administrator (a.k.a. DBA) to maintain the joinbase. The system is designed to work in a highly fault-tolerant manner, and can automatically recover from most errors. 
+In JoinBase, we carefully craft a dedicate database for unlimited IoT bigdata. You don't need a dedicated JoinBase administrator (a.k.a. DBA) to maintain the JoinBase. The system is designed to work in a highly fault-tolerant manner, and can automatically recover from most errors. 
 
 #### IoT Natural ACID
 
@@ -42,11 +42,11 @@ In joinbase, we carefully craft a dedicate database for unlimited IoT bigdata. Y
 
 Usually databases use some specific statements to group multiple statements as a single atomic unit, a.k.a. transaction. It is obvious that， there is a significant performance cost to supporting arbitrary transactions in general data systems. 
 
-In joinbase, we support a subset of general ACID transaction, `IoT Natural ACID` transaction called by us: the single-row write transaction in read committed isolation level. Every single-row message written into joinbase is taken as an implicit transaction. And joinbase does not provide any explicit transaction control statement now.
+In JoinBase, we support a subset of general ACID transaction, `IoT Natural ACID` transaction called by us: the single-row write transaction in read committed isolation level. Every single-row message written into JoinBase is taken as an implicit transaction. And JoinBase does not provide any explicit transaction control statement now.
 
 In the IoT domain, the messages from clients are not related. So, it doesn't make sense to provide complex composable transactions here. Although richer ACID options may be provided in the future, it is believed that IoT Natural ACID transaction as the default transaction behavior is the best choice for IoT domain users.
 
-In joinbase, one message may be mapped to one row or more rows by [JSON array flattening](/docs/references/mapping/#custom-mapping). But the message flattening is deterministic, so the single-row transaction model is still applied for the deterministic splitting rows.
+In JoinBase, one message may be mapped to one row or more rows by [JSON array flattening](/docs/references/mapping/#custom-mapping). But the message flattening is deterministic, so the single-row transaction model is still applied for the deterministic splitting rows.
 
 
 

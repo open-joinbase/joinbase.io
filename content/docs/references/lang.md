@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "For the current joinbase's query language, an ANSI SQL compatible syntax has been implemented."
+lead = "For the current JoinBase's query language, an ANSI SQL compatible syntax has been implemented."
 toc = true
 top = false
 +++
@@ -18,7 +18,7 @@ We also try to learn the great part of PostgreSQL/TimescaleDB, MySQL et. al. in 
 
 Here, we mainly show the differences and extensions to the ANSI SQL syntax which needing attention. Feel free to ask help from us and the community. 
 
-Finally, joinbase is evolving rapidly. This language document is continuing to be improved based on the latest progress.
+Finally, JoinBase is evolving rapidly. This language document is continuing to be improved based on the latest progress.
 
 # Syntax
 -------------------------
@@ -33,7 +33,7 @@ Finally, joinbase is evolving rapidly. This language document is continuing to b
 | String| Variable-length UTF8 string |✅|
 | Blob| Variable-length binary data block |✅|
 | Date | 32-bit date, days since UNIX epoch 1970-01-01 |✅|
-| DateTime | timestamp with an optional timezone, measured as a Unix epoch. The time zone is a string indicating the name of a time zone, either a time zone offset form "+XX:XX" or "-XX:XX", such as +07:30, or "Region/City" such as "America/New_York". If timezone is not provided, the server timezone (configurable via joinbase conf file) will be used.|✅|
+| DateTime | timestamp with an optional timezone, measured as a Unix epoch. The time zone is a string indicating the name of a time zone, either a time zone offset form "+XX:XX" or "-XX:XX", such as +07:30, or "Region/City" such as "America/New_York". If timezone is not provided, the server timezone (configurable via JoinBase conf file) will be used.|✅|
 | Decimal | Signed fixed-point big numbers with precision and scale. For division least significant digits are discarded (not rounded). |✅|
 |Boolean| boolean true or false |✅|
 |FixedString| Fixed-length string of N bytes. |✅|
@@ -43,7 +43,7 @@ Finally, joinbase is evolving rapidly. This language document is continuing to b
 
 Literals for primary types like integer or string is well established. For advanced types, like datetime, the traditional implicit pure string representations are subtle and error-prone.
 
-To avoid ambiguity and enhance the maintainability of the language, not like some SQL dialects, single quoted string literal in the joinbase is just for the String type. On the contrary, we favor `typed literals` for advanced literal, that is: `type prefix + string representation of that type`.
+To avoid ambiguity and enhance the maintainability of the language, not like some SQL dialects, single quoted string literal in the JoinBase is just for the String type. On the contrary, we favor `typed literals` for advanced literal, that is: `type prefix + string representation of that type`.
 
 | DateTime Types  | Example | 
 | :-------------- | :----------- |
@@ -53,9 +53,9 @@ To avoid ambiguity and enhance the maintainability of the language, not like som
 | FixedString | `fs(10)'abc123'`<br/> There the type prefix has a parameter for specifying the byte width of FixedString type. Because the FixedString data has a fixed length. The width parameter is used for padding its string representation. <br/> If the byte width is not provided, the length of its string representation will be used. That is, `fs'abc123'` is the short form of `fs(6)'abc123'`. See [more in the note](/docs/references/lang#note_fixedstring) below. |
 
 Note 
-* Not like Postgresql, joinbase only have one timezone-wared DateTime type. It is recommended that you use the default timezone of joinbase, which is the time zone of the joinbase server. But you can specify the time zone in anywhere needed.
+* Not like Postgresql, JoinBase only have one timezone-wared DateTime type. It is recommended that you use the default timezone of JoinBase, which is the time zone of the JoinBase server. But you can specify the time zone in anywhere needed.
 * Date and Time type are not related the time zones, it just plain date and time. If you need timezone wared behavior, you just use DateTime type.
-* <a id="note_fixedstring"></a>FixedString data in the joinbase is fixed length. For the shorter string representation, it is necessary to pad the representation to the fixed length (with zero). For the longer string representation, the excess trailing will be truncated away. To enhance the ergonomics, for the representation which you can not need to pad, you can omit the width parameter, like `fs'abc123'`. 
+* <a id="note_fixedstring"></a>FixedString data in the JoinBase is fixed length. For the shorter string representation, it is necessary to pad the representation to the fixed length (with zero). For the longer string representation, the excess trailing will be truncated away. To enhance the ergonomics, for the representation which you can not need to pad, you can omit the width parameter, like `fs'abc123'`. 
 
 
 ### Data Definition, Manipulation and Management
@@ -89,6 +89,9 @@ Allowed specific partition functions:
 |ymdh| get the year, month, day, hour from a `DateTime` value as 10-digit integer |1 |
 |ymdh2/ymdh4/ymdh6/ymdh12| variant of ymdh with `DateTime` type, but the interval gap is 2/4/6/12-hour |1|
 |rem| reminder of an Int-like types|1|
+
+    + NOTE
+    For more performance-ergonomic, all no-nullable types (this is the default case) in the `CREATE TABLE` statement has a default value: empty string for String, 0 for int-like and float-like, false for boolean, and unix epoch timestamp 0 (ISO 8601: 1970-01-01T00:00:00Z) for Date and DateTime. It is allow to use `default` constraint to change the default value if necessary. See more for [performance tunning](/docs/references/performance#Data_Type).
 
 * show databases
 ```sql
@@ -141,7 +144,7 @@ SELECT expr_list
 ```
 | Item | Note |
 | :----------- | :----------- |
-|WHERE PARTS clause | This clause is an unique joinbase extension to the standard SQL, related to the core concept of joinbase - [`Partition`](/docs/references/concept#partition). <br/> <br/> This clause allows the user to explicitly specify the query partitions to reduce scanning dataset and accelerate query. *|
+|WHERE PARTS clause | This clause is an unique JoinBase extension to the standard SQL, related to the core concept of JoinBase - [`Partition`](/docs/references/concept#partition). <br/> <br/> This clause allows the user to explicitly specify the query partitions to reduce scanning dataset and accelerate query. *|
 | Select clause | `select count(1) from table` is not currently supported. You can use `select count(some_column) from table` as the workaround. |
 
 * Currently, WHERE PARTS supports two subclause forms:

@@ -9,16 +9,16 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "joinbase supports the PostgreSQL wire protocol."
+lead = "JoinBase supports the PostgreSQL wire protocol."
 toc = true
 top = false
 +++
 
-Any PostgreSQL client or language can talk with joinbase in the capability. However, we think that the syntax of PostgreSQL, as a SQL dialect, it shows some inconsistent and confusing in the usage. For example, to show databases' information, you should use a exotic symbolic `\l`, rather than a plain SQL like statement.
+Any PostgreSQL client or language can talk with JoinBase in the capability. However, we think that the syntax of PostgreSQL, as a SQL dialect, it shows some inconsistent and confusing in the usage. For example, to show databases' information, you should use a exotic symbolic `\l`, rather than a plain SQL like statement.
 
-joinbase, as brand-new end-to-end IoT database, based on 20 year database experience, via learning from different dialects - PostgreSQL, MySQL, ClickHouse et. al., we want to provide a **simple, neat, consistent and extendable** ansi-SQL compatible language for users, rather than being a clone of any existing dialect.
+JoinBase, as brand-new end-to-end IoT database, based on 20 year database experience, via learning from different dialects - PostgreSQL, MySQL, ClickHouse et. al., we want to provide a **simple, neat, consistent and extendable** ansi-SQL compatible language for users, rather than being a clone of any existing dialect.
 
-The joinbase language specification could be seen in the [`Language`](/docs/references/lang/).
+The JoinBase language specification could be seen in the [`Language`](/docs/references/lang/).
 
 In the following list, we continue to track the compatibility of main PostgreSQL clients and drivers.
 
@@ -703,7 +703,7 @@ int main(int argc, char* argv[])
 
 ### Rust
 
-Sample program could be in our [OIDBS project](https://github.com/open-joinbase/oidbs).
+Sample program could be in our [OIDBS project](https://github.com/open-JoinBase/oidbs).
 
 
 ### Javascript

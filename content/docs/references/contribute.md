@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "joinbase is first open product for both IoT infra and database fields."
+lead = "JoinBase is first open product for both IoT infra and database fields."
 toc = true
 top = false
 +++

@@ -1,6 +1,6 @@
 +++
 title = "Management"
-description = "Management and administration of joinbase"
+description = "Management and administration of JoinBase"
 date = 2021-09-01T08:20:00+00:00
 updated = 2021-12-01T08:20:00+00:00
 draft = false
@@ -9,22 +9,22 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "Currently we provide a series of tools for super easy management and administration of joinbase."
+lead = "Currently we provide a series of tools for super easy management and administration of JoinBase."
 toc = true
 top = false
 +++
 
 ## Management
 
-After config, you can start the server of joinbase:
+After config, you can start the server of JoinBase:
 
 ```bash
 base start
 ```
 
-The joinbase server will listen on multiple ports to accept connections with different protocols.
+The JoinBase server will listen on multiple ports to accept connections with different protocols.
 
-To gracefully stop the server of joinbase:
+To gracefully stop the server of JoinBase:
 
 ```bash
 base stop
@@ -34,7 +34,7 @@ base stop
 
 #### <a id="base_admin"></a> base_admin
 
-`base_admin` is a tool to do the UDAC(User and Device Access Control) of joinbase.
+`base_admin` is a tool to do the UDAC(User and Device Access Control) of JoinBase.
 
 * `create_user`
 
@@ -52,7 +52,7 @@ base_admin list_users
 
 * `help`
 
-For all tools in joinbase, you will get help from subcommand `help`.
+For all tools in JoinBase, you will get help from subcommand `help`.
 ```bash
 base_admin help
 ```
