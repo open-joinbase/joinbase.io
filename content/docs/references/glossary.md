@@ -42,9 +42,9 @@ In JoinBase, we carefully craft a dedicate database for unlimited IoT bigdata. Y
 
 Usually databases use some specific statements to group multiple statements as a single atomic unit, a.k.a. transaction. It is obvious that， there is a significant performance cost to supporting arbitrary transactions in general data systems. 
 
-In JoinBase, we support a subset of general ACID transaction, `IoT Natural ACID` transaction called by us: the single-row write transaction in read committed isolation level. Every single-row message written into JoinBase is taken as an implicit transaction. And JoinBase does not provide any explicit transaction control statement now.
+In JoinBase, we support a subset of general ACID transaction, `IoT Natural ACID` transaction called by us: the single-row write transaction in read committed isolation level. Every single-row message written into JoinBase is taken as an implicit transaction. And JoinBase does not provide any explicit transaction control statement now. The IoT Natural ACID enables a special consistency model: causal consistency. That is, we guarantee the messages and their data effect from the same client are in the order. So, if there are causalities in all kinds of IoT events, you can still make causal inferences based on data effects.
 
-In the IoT domain, the messages from clients are not related. So, it doesn't make sense to provide complex composable transactions here. Although richer ACID options may be provided in the future, it is believed that IoT Natural ACID transaction as the default transaction behavior is the best choice for IoT domain users.
+In the IoT domain, the messages from different clients are not related. So, it doesn't make sense to provide complex composable transactions here. Although richer ACID options may be provided in the future, it is believed that IoT Natural ACID transaction as the default transaction behavior is the best choice for IoT domain users.
 
 In JoinBase, one message may be mapped to one row or more rows by [JSON array flattening](/docs/references/mapping/#custom-mapping). But the message flattening is deterministic, so the single-row transaction model is still applied for the deterministic splitting rows.
 

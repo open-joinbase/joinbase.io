@@ -14,8 +14,12 @@ top = false
 
 <div class="card-list">
     <div class="card my-3">
-        <div class="card-body"><a class="stretched-link"
-                href="https://cloud.joinbase.io/signup">Free JoinBase Cloud Preview Sign-up →</a></div>
+        <div class="card-body">
+        <!-- <a class="stretched-link"
+                href="https://cloud.joinbase.io/signup">Free JoinBase Cloud Preview Sign-up →</a> -->
+            Sorry. The budget of JoinBase Cloud Preview has been exhausted. We will re-opened the service as soon as possible. Before this time, <a class="stretched-link"
+                href="mailto://contact@joinbase.io">you can request the free JoinBase distribution by email →</a>
+        </div>
     </div>
     <div class="card my-3">
         <div class="card-body"><a class="stretched-link"
