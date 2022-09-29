@@ -13,7 +13,12 @@ top = false
 +++
 
 <div class="card-list">
-    <div class="card my-3">
+    <div class="card my-6">
+        <div class="card-body">
+            <img src="/imgs/joinbase_cloud_demo_2.gif" alt="JoinBase Cloud Demo" class="img-fluid">
+        </div>
+    </div>
+    <div class="card my-6">
         <div class="card-body">
         <!-- <a class="stretched-link"
                 href="https://cloud.joinbase.io/signup">Free JoinBase Cloud Preview Sign-up →</a> -->
@@ -21,7 +26,7 @@ top = false
                 href="mailto://contact@joinbase.io">you can request the free JoinBase distribution by email →</a>
         </div>
     </div>
-    <div class="card my-3">
+    <div class="card my-6">
         <div class="card-body"><a class="stretched-link"
                 href="/docs/getting-started/quick-start-cloud/">Quick Start for Cloud →</a></div>
     </div>

@@ -4,16 +4,16 @@ title = "One Database to Rule Them All"
 
 # The homepage contents
 [extra]
-lead = '<b>JoinBase</b>, the first, fastest, end-to-end database for IoT. For free.'
+lead = '<b>JoinBase</b>, the first, fastest, end-to-end IoT database.'
 url = "/docs/getting-started/introduction/"
 url_button = "Get started"
-repo_version = "Go to Github"
-repo_license = "Open Product"
-repo_url = "https://github.com/open-joinbase/joinbase"
+repo_version = "Project on Github"
+repo_license = ""
+repo_url = "https://github.com/open-joinbase"
 
 [[extra.list]]
 title = "MQTT Protocol Native"
-content = '<a href="https://mqtt.org/">MQTT messages</a> becomes the first-class citizen of database. Just send MQTT messages from devices, then you get real-time insights in joinbase.'
+content = '<a href="https://mqtt.org/">MQTT messages</a> becomes the first-class citizen of database. Just send MQTT messages from devices, then you get real-time insights in JoinBase.'
 
 [[extra.list]]
 title = "End-to-End Database"
@@ -29,11 +29,11 @@ content = 'General relational SQL model is supported with <a href="/docs/referen
 
 [[extra.list]]
 title = "Cloud Edge in One"
-content = "Support mainstream CPU architectures(X86, ARM, RISC-V) from day one. Run joinbase from edges to clouds without any functionality loss."
+content = "Support mainstream CPU architectures(X86, ARM, RISC-V) from day one. Run JoinBase from edges to clouds without any functionality loss."
 
 [[extra.list]]
 title = "Top Adhoc Performance"
-content = 'joinbase&#39;s hardware accelerated, vectorized and exclusively crafted engine are pushing the power of <a href="/benchmark">modern hardware to the limit</a>.'
+content = 'JoinBase&#39;s hardware accelerated, vectorized and exclusively crafted engine are pushing the power of <a href="/benchmark">modern hardware to the limit</a>.'
 
 [[extra.list]]
 title = "DevOps Free"
@@ -41,10 +41,10 @@ content = 'No coding and DBA required. Three minutes to get started with adaptiv
 
 [[extra.list]]
 title = "PostgreSQL Compatibility"
-content = '<a href="/docs/references/postgresql">Support PostgreSQL wire protocol</a>. No strange toolings. Feel free to use wide and powerful PostgreSQL clients and drivers to work with joinbase.'
+content = '<a href="/docs/references/postgresql">Support PostgreSQL wire protocol</a>. No strange toolings. Feel free to use wide and powerful PostgreSQL clients and drivers to work with JoinBase.'
 
 [[extra.list]]
-title = "Open Product"
-content = '<a href="https://cloud.joinbase.io">Try our free joinbase Cloud Preview</a>, or <a href="https://cloud.joinbase.io/req">apply free joinbase Enterprise</a>. <br/> Join the joinbase open community, and tell us what do you like.'
+title = "Free Everywhere"
+content = 'As a freeware, JoinBase is allowed free commercial use everywhere. Join the JoinBase  fast-growing community, and tell us what do you like.'
 
 +++
