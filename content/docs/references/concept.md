@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "\"<b>Make the use of database damn simple!</b>\""
+lead = "\"<b>Make the IoT data simple!</b>\""
 toc = true
 top = false
 +++

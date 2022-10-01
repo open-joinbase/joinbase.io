@@ -1,5 +1,5 @@
 +++
-title = "One Database to Rule Them All"
+title = "One Simple Database to Rule Them All"
 
 
 # The homepage contents
@@ -21,7 +21,7 @@ content = 'First <a href="/docs/references/glossary/#end-to-end-database">end-to
 
 [[extra.list]]
 title = "Massive Online Devices"
-content = '<a href="/benchmark">Near ten million sustained MQTT</a> messages per second and physical IoT devices connections per node have been reached on the first version.'
+content = '<a href="/benchmark">25 million sustained 80-byte MQTT</a> messages per second and physical IoT devices connections per node have been reached on the first version.'
 
 [[extra.list]]
 title = "SQL with ACID"
@@ -45,6 +45,6 @@ content = '<a href="/docs/references/postgresql">Support PostgreSQL wire protoco
 
 [[extra.list]]
 title = "Free Everywhere"
-content = 'As a freeware, JoinBase is allowed free commercial use everywhere. Join the JoinBase  fast-growing community, and tell us what do you like.'
+content = 'As a freeware, JoinBase is allowed free commercial use everywhere. Join <a href="https://github.com/open-joinbase">the JoinBase fast-growing community</a>, and tell us what do you like.'
 
 +++

@@ -9,10 +9,9 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = '''<b>JoinBase</b> is the end-to-end Database for IoT. With JoinBase, you can do top performance real-time analytics over massive IoT device's bigdata deluges at an extremely low cost.
+lead = '''<b>JoinBase</b> is the first true IoT database, with which you can do top performance real-time analytics over massive IoT data deluges in one stop and a simple way.
 <br/>
-<br/>
-In addition to this documentation, it is welcome that you can join our open product community to learn, discuss, request or even contribute.
+In addition to this documentation, it is welcome that you can join <a href="https://github.com/open-joinbase/joinbase">our community</a> to learn, discuss, request or even contribute.
 '''
 toc = true
 top = false

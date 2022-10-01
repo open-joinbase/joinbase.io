@@ -23,7 +23,7 @@ top = false
         <!-- <a class="stretched-link"
                 href="https://cloud.joinbase.io/signup">Free JoinBase Cloud Preview Sign-up →</a> -->
             Sorry. The budget of JoinBase Cloud Preview has been exhausted. We will re-opened the service as soon as possible. Before this time, <a class="stretched-link"
-                href="mailto://contact@joinbase.io">you can request the free JoinBase distribution by email →</a>
+                href="mailto://contact@joinbase.io">you can request the free JoinBase distribution by email</a> or <a class="stretched-link" href="/request">the request page</a>.
         </div>
     </div>
     <div class="card my-6">
