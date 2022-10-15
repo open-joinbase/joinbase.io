@@ -86,6 +86,7 @@ The structure of JoinBase table is directly mapping from the MQTT message. By th
 Let's create a database and a table to store the data. 
 ```sql
 create database abc;
+use abc;
 ```
 ```sql
 CREATE TABLE IF NOT EXISTS t

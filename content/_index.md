@@ -37,7 +37,7 @@ content = 'JoinBase&#39;s hardware accelerated, vectorized and exclusively craft
 
 [[extra.list]]
 title = "DevOps Free"
-content = 'No coding and DBA required. Three minutes to get started with adaptive full IoT spectrum. <a href="/docs/references/ha/">Built-in HA</a> brings analytic scale-out in high availability.'
+content = 'No coding and DBA required. One minute to get started with adaptive full IoT spectrum. <a href="/docs/references/ha/">Built-in HA</a> brings analytic scale-out in high availability.'
 
 [[extra.list]]
 title = "PostgreSQL Compatibility"
