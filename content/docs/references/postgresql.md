@@ -1,10 +1,10 @@
 +++
-title = "PostgreSQL Compatibility"
+title = "PostgreSQL Interface"
 description = ""
 date = 2021-09-01T08:20:00+00:00
 updated = 2021-12-01T08:20:00+00:00
 draft = false
-weight = 800
+weight = 720
 sort_by = "weight"
 template = "docs/page.html"
 

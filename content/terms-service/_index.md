@@ -1,8 +1,7 @@
 +++
-title = "joinbase Cloud Terms of Service"
-description = "Last updated on May 22, 2022"
-date = 2022-05-22T08:00:00+00:00
-updated = 2020-05-22T08:00:00+00:00
+title = "JoinBase Cloud Terms of Service"
+date = 2022-02-01T08:00:00+00:00
+updated = 2023-02-01T08:00:00+00:00
 draft = false
 
 [extra]

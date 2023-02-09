@@ -1,5 +1,5 @@
 +++
-title = "MQTT Messages"
+title = "MQTT Interface"
 description = ""
 date = 2021-09-01T08:20:00+00:00
 updated = 2021-12-01T08:20:00+00:00
@@ -9,12 +9,17 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "MQTT Protocol is the first-class citizen of JoinBase."
+lead = "JoinBase can be used as a high performance MQTT broker."
 toc = true
 top = false
 +++
 
-In JoinBase, we provide a MQTT server, can be seen as a common MQTT broker. So IoT devices just send MQTT messages to JoinBase server, then JoinBase will store data reliably for you. Finally, you can do fastest real-time IoT data analysis on top of stored bigdata via an easy SQL compatible language at any moment. All these are done in the one-stop JoinBase. There is no need to use any other systems or tools.
+A built-in MQTT broker capacity is implemented in JoinBase. So,
+1. IoT devices just send MQTT messages to JoinBase server, 
+2. JoinBase will store data reliably for you, 
+3. And then you can subscribe to that topic/table in other devices. 
+4. Finally, you can do fastest real-time IoT data analysis on top of stored bigdata via an easy SQL compatible language. 
+5. In the same time, you can use the JoinBase a high performance MQTT broker for routing messages to other subscribers as well.
 
 ### Working Modes
 
@@ -26,13 +31,41 @@ There are two common working modes or scenarios for JoinBase:
 
 If you want to use existed brokers, you can start two connections in your device to connect: one for your broker and one for the JoinBase.
 
-2. Connections from MQTT brokers on [the bridge mode](/docs/references/bridge/). 
+2. Connections from MQTT brokers on the bridge mode. 
 
-If the above direct connection mode cannot be achieved immediately, you can use this working mode. We provide an excellent dedicated MQTT bridge. For detailed configuration and usage, please refer to [here](/docs/references/bridge/). But please note that the message writing performance will be highly limited by your front-end broker, usually by orders of magnitude lower.
+If the above direct connection mode cannot be achieved immediately, you can use this working mode. We provide an excellent dedicated MQTT bridge. We also provide an dedicated MQTT bridge for existing users, who want to explore the JoinBase without making any changes to your existing architectures.
+
+> 🔍 
+>
+> Please note that the message writing performance will be highly limited by your front-end broker, usually by orders of magnitude lower.
+
+1. MQTT Bridge Config
+
+> Get a helpfull information.
+
+```bash
+$ oibb --help
+```
+
+> There is a template configuration file base TOML under the `config` directory, 
+which can be modified as needed.
+
+```bash
+$ vim ./config/bridge.toml
+```
+
+2. MQTT Bridge Run
+
+> You can change the log output level by setting `BASE_LOG` environment variable.
+
+```bash
+$ BASE_LOG=info oibb --config ./config/bridge.toml
+```
+
 
 ### MQTT Message to Table Mapping
 
-In order for the message to be correctly stored in the appropriate database table, we have made the following conventions:
+In JoinBase, we have made the `Topic` concept in MQTT and the `Table` concept in database exchangeable. In order for the message to be correctly stored in the appropriate database table, we have made the following conventions:
 
 |    Table             |         MQTT Message             |
 | :------------------- | :------------------------ | 

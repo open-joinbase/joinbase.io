@@ -1,8 +1,8 @@
 +++
 title = "JoinBase: Creates An Unprecedented Database for IoT era"
 description = ""
-date = 2025-05-01T18:00:00+00:00
-updated = 2021-05-01T18:00:00+00:00
+date = 2021-10-18T18:00:00+00:00
+updated = 2022-10-18T18:00:00+00:00
 sort_by = "weight"
 weight = 4
 draft = false
@@ -11,7 +11,7 @@ draft = false
 class = "page single"
 +++
 
-## What's JoinBase
+# What's JoinBase
 
 <b>JoinBase</b> is an [end-to-end database](/docs/references/glossary/#end-to-end-domain-database) database for IoT. With it, you can do top performance real-time analytics over massive IoT device's bigdata deluges at an extremely low cost in one stop.
 
@@ -101,6 +101,10 @@ The most exciting thing is that, **JoinBase importing uses the MQTT based one-by
 
 In our internal stress, **8.4 million messages/s sustained throughput in one-by-one message (a.k.a. batch size = 1) importing can be achieved in JoinBase**. Although Timescale also has a good result when batching enabled in client (the timescaledb-parallel-copy tool here), the first version of JoinBase still crushes it with enough concurrency in one-by-one style. 
 
+<b>update (2022.12):</b>
+
+In the initial release, JoinBase does not support batched message ingestion. This has changed after 2022.11. With the batch ingestion support, JoinBase can reach a sustained throughput of 25 million messages per second (50 msgs/batch, 40 bytes/msg), and this is not the maximum value, as at this point our NVME SSD(WDC PC SN730)'s continuous write (out-of-buffer) bandwidth (avg ~1GB/s) has become saturated!
+
 ### Performance Comparison - Query Latency
 
 The benchmark item to query latency is used for measuring the response time to a single query. 
@@ -128,8 +132,10 @@ Note,
 
 
 Jump to the result!
-
-![Query latency benchmark for nyct_lite](/imgs/benchmark/oidbs_bench_latency_results_nyct_lite.png)
+<div class="text-center">
+<img src="/imgs/benchmark/oidbs_bench_latency_results_nyct_lite.png" alt="Query latency benchmark for nyct_lite" class="img-fluid">
+</img>
+</div>
 <p align="center"> Fig.1 Query latency benchmark results for nyct_lite <p/>
 
 | Elapsed time ratio | ClickHouse:JoinBase | Timescale:JoinBase |
@@ -170,7 +176,11 @@ The benchmark process of the `nyct_strip` model is same to the `nyct_lite`, exce
 
 Go to the results:
 
-![Query latency benchmark for nyct_strip](/imgs/benchmark/oidbs_bench_latency_results_nyct_strip.png)
+
+<div class="text-center">
+<img src="/imgs/benchmark/oidbs_bench_latency_results_nyct_strip.png" alt="Query latency benchmark for nyct_strip" class="img-fluid">
+</img>
+</div>
 <p align="center"> Fig.2 Query latency benchmark results for nyct_strip <p/>
 
 | Elapsed Time Ratio | ClickHouse:JoinBase | Timescale:JoinBase |
@@ -215,7 +225,10 @@ This query imitates an alert query to report the counting of anomaly trips in th
 
 Go to the result: 
 
-![Query concurrency benchmark](/imgs/benchmark/oidbs_bench_concurrency_results.png)
+<div class="text-center">
+<img src="/imgs/benchmark/oidbs_bench_concurrency_results.png" alt="Query concurrency benchmark" class="img-fluid">
+</img>
+</div>
 <p align="center"> Fig.3 Query Concurrency benchmark results<p/>
 
 |DB | QPS (Queries Per Second)|
@@ -226,7 +239,7 @@ Go to the result:
 
 As we can see, **the QPS of JoinBase is two orders of magnitude higher than that of Timescale and ClickHouse. JoinBase's custom query path is so incredibly fast that it can complete 34k lightweight adhoc aggregations for recent data in a modern mid-range box.** Even TP databases (see Timescale) are far from beating, not mention the AP system (ClickHouse). 
 
-## Outlook
+# Outlook
 
 Some interesting things which can not be included in the first release of JoinBase, due to the implementation or time limit.
 
@@ -254,7 +267,7 @@ Some interesting things which can not be included in the first release of JoinBa
 
     JoinBase supports three main stream CPU arches from day 0. With recent AWS makes Graviton3 generally available in [c7g instance](https://aws.amazon.com/ec2/instance-types/c7g/), it are truly interesting to show how good the JoinBase works in this processor. Still stay tunned!
 
-## Conclusion
+# Conclusion
 
 JoinBase is creating an unprecedented, user-oriented, end-to-end database for IoT: 
 
@@ -263,4 +276,4 @@ JoinBase is creating an unprecedented, user-oriented, end-to-end database for Io
 3. For medium and long-term data analysis, JoinBase supports the fastest interactive SQL queries (in all implemented features).
 4. For the IoT domain, JoinBase supports MQTT message direct write, message payload mapping, device management, MQTT broker bridging, restricted resource and environment running, et.al..
 
-Finally, welcome to [apply the JoinBase Enterprise for free](https://cloud.joinbase.io/req).
+Finally, welcome to [request the JoinBase Enterprise for free](/request).

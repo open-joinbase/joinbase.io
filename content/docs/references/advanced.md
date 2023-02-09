@@ -9,7 +9,9 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "In order to better encourage users to adapt JoinBase, we set leave small set of advanced features for users to unlock."
+lead = "To better encourage users to adapt JoinBase, we set leave small set of advanced features for users to unlock."
 toc = true
 top = false
 +++
+
+Join our community ([Issues](https://github.com/open-joinbase/JoinBase/issues), [Discord](https://discord.gg/sqX6vfnURj)...) and you can request any help at the community.

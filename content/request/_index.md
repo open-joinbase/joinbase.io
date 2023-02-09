@@ -1,5 +1,5 @@
 +++
-title = "Request for Free JoinBase"
+title = "Request Form"
 description = "Join us"
 date = 2021-09-01T08:00:00+00:00
 updated = 2021-12-01T08:00:00+00:00
@@ -25,6 +25,19 @@ class = "page single"
   <div class="mb-3">
     <label for="req_phone" class="form-label">Phone (optional)</label>
     <input class="form-control" id="req_phone" name="phone">
+  </div>
+  <div class="mb-3">
+    <label for="req_type" class="form-label">Interests (optional)</label>
+    <select class="form-control" id="req_type" name="type">
+      <option>JoinBase</option>
+      <option>SmartBase</option>
+      <option>Enterprise services</option>
+      <option>Cloud services</option>
+      <option>Community and newsletter</option>
+      <option>General data technologies</option>
+      <option>General AIoT technologies</option>
+      <option>All or any other</option>
+    </select>
   </div>
   <div class="mb-3">
     <label for="req_comment" class="form-label">Message</label>

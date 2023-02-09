@@ -22,9 +22,9 @@ An end-to-end database is proposed, by us, as an out-of-the-box database for non
 
 More formally, **an end-to-end database meets the following <sup>3</sup>E standards**:
 
-1. **End native**. For IoT domain, direct message ingestion from end devices to end databases without any intermediate components involved.
-2. **End elasticity**. For IoT domain, both cloud end and edge end are deployable for main three stream CPU architectures without any functionality compromise.
-3. **End friendly**. All necessary pipelines are provided for end users without any DBA required.
+1. **Edge native**. For IoT domain, direct message ingestion from end devices to end databases without any intermediate components involved.
+2. **Edge elasticity**. For IoT domain, both cloud end and edge end are deployable for main three stream CPU architectures without any functionality compromise.
+3. **Edge friendly**. All necessary pipelines are provided for end users without any DBA required.
 
 #### IoT Native
 

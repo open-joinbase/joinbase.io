@@ -9,14 +9,14 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = "Make the first query in JoinBase Enterprise in three minutes!"
+lead = "Just make your first query in one minute!"
 toc = true
 top = false
 +++
 
 ## Get JoinBase Enterprise
 
-Now JoinBase Enterprise is in the beta test. All interested users are welcome to request the trial for free. We also provide **Open Partner Plan** for early partners.
+All individuals or companies are welcome to request the free JoinBase Enterprise via the [page](/request).
 
 To quickly prepare JoinBase, see more in [Installation](/docs/references/install/) page.
 
@@ -41,7 +41,7 @@ joinbase_start
 
 See more about management and administration in [`Management`](/docs/references/mgmt/) page. 
 
-> 💡
+> 🔍
 > 
 > Use `tail -f` to track your log in the directory of above `log_dir`(path_to_your_log_dir)
 
@@ -55,6 +55,10 @@ The following subcommand `create_user` creates a user with a demo username `abc`
 ```bash
 base_admin create_user abc abc
 ```
+
+> 🔍
+> 
+> It is recommend that you should not provide the input in the password position. If the password is not provided, the command will request you to provide a password in a non-displayed style.
 
 ## Connect to JoinBase
 
@@ -73,7 +77,7 @@ show tables;
 
 See more about JoinBase language in [Language](/docs/references/lang/) page.
 
-> 💡
+> 🔍
 > 
 > append `-d db_name` to psql to make psql connected to that database in default.
 
@@ -100,7 +104,7 @@ Note, the above statement is for demo. You should use a partition schema for a b
 
 See more about [`Partition`](/docs/references/concept#partition) and [`create table`](/docs/references/lang#create_table) page.
 
-## Ingest MQTT message
+## Ingest Message
 
 Now, we can do a test query for the new table.
 
@@ -111,18 +115,35 @@ SELECT 0
 
 Yes. There is no data in the new table `t`. Let's inject a sample data into the table.
 
-We just use a 3rd party tool `mosquitto_pub` from [Eclipse Mosquitto](https://mosquitto.org/) to send a message into JoinBase as an example.
+You can use all provided interfaces to ingest the data. For example:
+
+1. HTTP interface
+
+```bash
+curl -s -H 'X-JoinBase-User: abc' -H 'X-JoinBase-Key: abc'  -X POST 'http://127.0.0.1:8080/abc/t' -d '1,2'
+```
+
+The `curl` is one popular HTTP client tool. See more in [HTTP Interface](/docs/references/http/) page.
+
+2. MQTT interface
 
 ```bash
 mosquitto_pub -d -t /abc/t -h 127.0.0.1 -u abc -P abc -m '{"a":1,"b":2}'
 ```
-Here, the default message protocol of `mosquitto_pub` is MQTT v3.1.1. For MQTT v3.1.1 messages, we map the topic to database.table. However, for v5 messages, we change to use the customized user properties. 
 
-See more in [MQTT Messages](/docs/references/mqtt/) page.
+The `mosquitto_pub` is a 3rd party MQTT client tool from [Eclipse Mosquitto](https://mosquitto.org/). See more in [MQTT Interface](/docs/references/mqtt/) page.
 
-> 💡
+3. PostgreSQL interface
+
+```sql
+INSERT INTO abc.t VALUES (1,2)
+```
+
+This statement is issued from the PostgreSQL's official console `psql`. See more in [PostgreSQL Interface](/docs/references/postgresql/) page.
+
+> 🔍
 > 
-> Use latest tool binaries to avoid protocol compatibility problems.
+> Use latest tools to avoid potential compatibility problems.
 
 ## Make the Query
 

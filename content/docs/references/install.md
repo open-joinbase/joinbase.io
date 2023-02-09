@@ -16,18 +16,20 @@ top = false
 
 ## Install
 
-JoinBase does not need to be installed. The JoinBase release is shipped in a compressed package. Just decompress it to any directory of your machine. Then, go to decompressed directory to use. 
+JoinBase does not need to be installed. The JoinBase release is shipped in a compressed package. Just decompress it to any directory of your machine. Then, go that directory to use. 
 
 ## Prerequisites
 
 * Operation system
 
-Currently, JoinBase only supports Linux distributions with modern kernels, for example , [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/), [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2). Feel free to ask for help if you have problems on the running operation system. ([Windows WSL2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) may be also supported for development and functional evaluation.)
+Currently, JoinBase only supports Linux distributions with modern kernels, example, [latest Ubuntu 20.04.4+ LTS](https://releases.ubuntu.com/20.04/). Feel free to ask for help if you have problems on the running operation system. We are good at running latest kernels on several-dollar-level old SBCs. ([Windows WSL2 with latest kernel](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) also works greatly.)
 
 * Storage
 
-For storage, there is no hard requirement. But if you want to achieve the leading performance, one kind of SSD is recommended.
+For storage, there is no hard requirement. But if you want to achieve the leading performance, the SSD disk is recommended.
 
 * Processor
 
-General x86-64 version is provided for users. But early partners can request kinds of optimized versions to fully squeeze the power of specific hardwares.
+Mainstream 64bit CPU architectures are supported(X86-64, ARM, RISC-V), and scaled from $6 ARMv8 SBC to AWS 384-core(z-series) instance.
+
+Currently, the x86-64v3 (AVX2+) version is available for public downloading. More other arch version downloads will come soon. We are also happy to provide kinds of optimized versions for any interesting processors and hardwares when users [request](/request).

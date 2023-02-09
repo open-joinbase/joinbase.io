@@ -2,7 +2,7 @@
 title = "Language"
 description = ""
 date = 2021-05-01T08:20:00+00:00
-updated = 2021-05-01T08:20:00+00:00
+updated = 2021-10-27T08:20:00+00:00
 draft = false
 weight = 500
 sort_by = "weight"
@@ -212,7 +212,7 @@ SELECT expr_list
 
 | Item  |  Detail  | 
 | :----------- | :----------- | 
-| Function Name | day,day_of_week,day_of_year,hour,minute,month,quarter,second,week,year |
+| Function Name | yyyy/year,yyyymm,ymd/date,ymdh,ymdhm,ymdhms,</br>month,weekday,day,hour,minute,second |
 | Description |  DateTime related functions |
 | Type  | scalar |
 

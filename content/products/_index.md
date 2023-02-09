@@ -1,8 +1,8 @@
 +++
-title = "Pricing"
+title = "Products"
 description = ""
-date = 2025-05-01T18:00:00+00:00
-updated = 2021-05-01T18:00:00+00:00
+date = 2022-10-18T18:00:00+00:00
+updated = 2023-02-06T18:00:00+00:00
 sort_by = "weight"
 weight = 4
 draft = false
@@ -24,13 +24,14 @@ class = "page single"
     </div>
     <div class="pricing-table-content text-black">
       <ul>
-        <li><strong>Full functionality for Enterprise</strong></li>
-        <li><strong>DevOps Free</strong></li>
-        <li><strong>Community Support</strong></li>
+        <li><strong>Full functionality but no HA</strong></li>
+        <li><strong>Commercial friendly <a href="/community_license">License agreement</a></strong></li>
+        <li><strong><a href="https://github.com/open-joinbase/JoinBase">Community support</a></strong></li>
       </ul>
       <div class="pricing-table-button">
-        <a href="/request" class="btn btn-bg"><span>Request for Free</span></a>
+        <a href="https://github.com/open-joinbase/JoinBase/releases" class="btn btn-bg"><span>Download *</span></a>
       </div>
+      <p>* make sure you accept the <a href="/community_license">community edition license agreement</a> before downloading.</p>
     </div>
   </div>
   <!-- new table -->
@@ -88,12 +89,12 @@ class = "page single"
     </div>
     <div class="pricing-table-content text-black">
       <ul>
-        <li><strong>All in Community Edition</strong></li>
-        <li><strong>Dedicated Engineer Support</strong></li>
-        <li><strong>High Priority Feature Request Support</strong></li>
-        <li><strong>IoT Domain Data Platform Consultant</strong></li>
-        <li><strong>Performance Optimization Consultant</strong></li>
-        <li><strong>Performance Optimization Exclusive Period</strong></li>
+        <li><strong>Full functionality with scalable HA clustering</strong></li>
+        <li><strong>SLA support</strong></li>
+        <li><strong>Dedicated engineer support</strong></li>
+        <li><strong>Long term release support</strong></li>
+        <li><strong>High priority fixs and feature requests support</strong></li>
+        <li><strong>Data platform and performance optimization consultant</strong></li>
       </ul>
       <div class="pricing-table-button">
         <a href="/request" class="btn btn-bg"><span>Contact</span></a>

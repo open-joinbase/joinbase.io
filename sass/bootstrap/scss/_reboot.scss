@@ -294,7 +294,7 @@ pre {
   // Account for some code outputs that place code tags in pre tags
   code {
     @include font-size(inherit);
-    color: inherit;
+    
     word-break: normal;
   }
 }

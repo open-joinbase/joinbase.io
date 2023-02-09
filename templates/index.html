@@ -31,13 +31,14 @@
           <h1 class="mt-0">{{ section.title | default(value="JoinBase") }}</h1>
         </div>
         <div class="col-lg-9 col-xl-8 text-center">
-          <p class="lead">{{ section.extra.lead | default(value="Please start setting config.toml and adding your
-            content.") | safe }}</p>
-          <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ get_url(path=section.extra.url | default(value=" /")) |
+          <p class="lead" style="font-size:1.2rem;">{{ section.extra.lead | default(value="") | safe }}</p>
+          <a class="btn btn-primary btn-lg px-4 mb-2 me-3" href="{{ get_url(path=section.extra.url) |
             safe }}" role="button">{{ section.extra.url_button | default(value="Get started") }}</a>
-          <p class="meta">{{ section.extra.repo_license | default(value="MIT")}} <a
+            
+          <a class="btn btn-primary btn-lg px-4 mb-2 me-3" href="{{ section.extra.download_url }}" role="button">{{ section.extra.download_button | default(value="Download") }}</a>
+          <!-- <p class="meta">{{ section.extra.repo_license | default(value="MIT")}} <a
               href="{{ section.extra.repo_url | default(value=" http://joinbase.io") | safe }}">{{
-              section.extra.repo_version | default(value="0.1.0") }}</a></p>
+              section.extra.repo_version | default(value="0.1.0") }}</a></p> -->
         </div>
       </div>
     </section>
@@ -60,15 +61,62 @@
 </section>
 
 <section class="section section-sm container-fluid">
-  <h2 class="h2 text-center">"Empower the wildlife protection in 1/4-palm size"</h2>
+  <h1 class="h1 text-center">Hands on JoinBase in 38 seconds</h1>
   <div class="container">
     <div class="row justify-content-center text-center">
-      <div class="col-lg-12">
+      <div id="jb1m"></div>
+      <script src="/asciinema-player.min.js"></script>
+      <script>
+        AsciinemaPlayer.create('/casts/joinbase_one_minute.cast', document.getElementById('jb1m'), { preload: true, autoPlay: true });
+      </script>
+      <!-- <div class="col-lg-12">
         <a href="https://www.hackster.io/surfeit/tinywild-make-wild-iot-in-your-hand-729732">
           <img src="/imgs/tinywild.jpg" alt="TinyWild" class="img-fluid">
         </a>
       </div>
-      <h4 class="h4 text-center"><a href="https://www.hackster.io/surfeit/tinywild-make-wild-iot-in-your-hand-729732">Read the story about JoinBase helping the world</a></h4>
+      <h4 class="h4 text-center"><a
+          href="https://www.hackster.io/surfeit/tinywild-make-wild-iot-in-your-hand-729732">Read the story about
+          JoinBase helping the world</a></h4> -->
+    </div>
+    <br />
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/request" role="button">Request Free JoinBase</a>
+    </div>
+  </div>
+  <br />
+  <h1 class="h1 text-center">Hands on JoinBase in HTTP Interface</h1>
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div id="jb2m"></div>
+      <script src="/asciinema-player.min.js"></script>
+      <script>
+        AsciinemaPlayer.create('/casts/quick_start_http.cast', document.getElementById('jb2m'), { preload: true, autoPlay: true });
+      </script>
+      <!-- <div class="col-lg-12">
+        <a href="https://www.hackster.io/surfeit/tinywild-make-wild-iot-in-your-hand-729732">
+          <img src="/imgs/tinywild.jpg" alt="TinyWild" class="img-fluid">
+        </a>
+      </div>
+      <h4 class="h4 text-center"><a
+          href="https://www.hackster.io/surfeit/tinywild-make-wild-iot-in-your-hand-729732">Read the story about
+          JoinBase helping the world</a></h4> -->
+    </div>
+    <br />
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/request" role="button">Request Free JoinBase</a>
+    </div>
+  </div>
+  <br />
+  <h1 class="h1 text-center">Create an AIoT Dashboard in Two minutes</h1>
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <a href="https://youtu.be/Sq5SzEeeg88">
+        <img src="/imgs/blog/smartbase/smartbase_showcase.webp" alt="create a dashboard by SmartBase" class="img-fluid">
+      </a>
+    </div>
+    <br />
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/request" role="button">Request Free SmartBase</a>
     </div>
   </div>
 </section>
@@ -77,81 +125,90 @@
   <div class="row justify-content-center text-center">
     <div class="col-lg-9">
       <div class="container">
-        <h2>Why JoinBase</h2>
+        <h1 class="h1 text-center">Why JoinBase</h1>
         <table>
           <thead>
             <tr>
               <th></th>
               <!-- <th>JoinBase Cloud Preview<br /></th> -->
-              <th>JoinBase Enterprise<br />2022.10</th>
-              <th>Common<br />Time Series Databases</th>
-              <th>General<br />Databases or Bigdata Systems</th>
+              <th>JoinBase<br />Enterprise<br />2022.10</th>
+              <th>Common<br />Time Series<br />Databases</th>
+              <th>General<br />Data<br />Systems</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>MQTT TCP Protocol Support</td>
               <!-- <td>✅</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
               <td>MQTT TLS Protocol Support</td>
               <!-- <td>N/A</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
               <td>All-in-one workload</td>
               <!-- <td>✅</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
-              <td>SQL Syntax Compatibility</td>
+              <td>Builtin Low-code and Customizable Dashboard</td>
               <!-- <td>✅</td> -->
-              <td>✅</td>
-              <td>Partial</td>
-              <td>✅</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
               <td>PostgreSQL Wire Protocol Interface</td>
               <!-- <td>N/A</td> -->
-              <td>✅</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i><br />(except PG and dedicated)
+              </td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i><br />(except PG and dedicated)
+              </td>
+            </tr>
+            <tr>
+              <td>SQL Syntax Compatibility</td>
+              <!-- <td>✅</td> -->
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
               <td>Partial</td>
-              <td>❌<br />(except PG and dedicated)</td>
+              <td>Partial</td>
             </tr>
             <tr>
               <td>Reliable Storage<br />within ACID</td>
               <!-- <td>Partial</td> -->
-              <td>✅</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
               <td>Partial</td>
               <td>Partial</td>
             </tr>
             <tr>
               <td>Write Performance <br />-<br /> Max Sustained MQTT Messages <br />Per Second Per Node</td>
               <!-- <td>25 Millions (tiny batch)<sup>1</sup>,<br/>7 Millions (non-batch)<sup>1</sup></td> -->
-              <td>25 Millions<br /> (tiny batch)<sup>2</sup>,<br/>7 Millions<br /> (non-batch)<sup>2</sup></td>
-              <td>❌</td>
-              <td>❌</td>
+              <td>25 Millions<br /> (tiny batch)<sup>2</sup>,<br />7 Millions<br /> (non-batch)<sup>2</sup></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
               <td>Write Performance <br />-<br /> Max <br /> Physical TCP Connections <br /> Per Node
               </td>
               <!-- <td>~ 10 Millions</td> -->
-              <td> 10+ Millions</td>
+              <td> 10 - 100 Millions</td>
               <td>Low</td>
               <td>Very Low</td>
             </tr>
             <tr>
               <td>Analytical Query Performance <br />-<br /> Latency </td>
               <!-- <td>Top<sup>1</sup></td> -->
-              <td>10-million-row<br /> aggregation<br /> in hundreds of<br /> microseconds<sup>3</sup></td>
-              <td>10-million-row<br /> aggregation<br /> in tens of <br /> milliseconds<sup>3</sup></td>
-              <td>10-million-row<br /> aggregation<br /> in hundreds of<br /> milliseconds<sup>3</sup></td>
+              <td>10M-row<br />aggregation<br /> in <br />microseconds<sup>3</sup></td>
+              <td>10M-row<br />aggregation<br /> in <br />100 milliseconds<sup>3</sup></td>
+              <td>10M-row<br />aggregation<br /> in <br />seconds<sup>3</sup></td>
             </tr>
             <tr>
               <td>Analytical Query Performance <br />-<br />Concurrency</td>
@@ -163,32 +220,31 @@
             <tr>
               <td>DevOps Free</td>
               <!-- <td>✅</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <td>Open Product</td>
-              <!-- <td>✅</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
               <td>Cloud Edge<br /> in One</td>
               <!-- <td>N/A</td> -->
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td>Partial with very low performance</td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
             </tr>
             <tr>
-              <td>Private Deployment</td>
-              <!-- <td>N/A</td> -->
-              <td>✅</td>
-              <td>N/A</td>
-              <td>N/A</td>
+              <td>Free Commercial Use</td>
+              <!-- <td>✅</td> -->
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td>Partial with very low performance</td>
+              <td>Partial with very low performance</td>
             </tr>
             <!-- <tr>
+              <td>Private Deployment</td>
+              <td><i class="las la-check-circle" style="color:green; font-size: 48px"></i></td>
+              <td>Partial</td>
+              <td><i class="las la-times-circle" style="color:red; font-size: 48px"></i></td>
+            </tr>
+            <tr>
               <td>Super Keys</td>
               <td>N/A</td>
               <td>✅</td>
