@@ -88,7 +88,7 @@ og_locale = "en_US"
 ## JSON-LD
 [extra.schema]
 type = "Organization"
-logo = "tb-logo.svg"
+logo = "tb-logo.png"
 twitter = "https://twitter.com/joinbase_db"
 linked_in = ""
 github = "https://github.com/open-joinbase/joinbase"

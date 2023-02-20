@@ -11,9 +11,9 @@
 
 {% macro favicons() %}
   <meta name="theme-color" content="{{ config.extra.theme_color | default(value="#fff") }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="tb-logo.svg") | safe }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="tb-logo.svg") | safe }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path="tb-logo.svg") | safe }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/joinbase_logo_180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/joinbase_logo_32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/joinbase_logo_16.png">
   {% if not config.extra.is_netlify %}
     <link rel="manifest" href="{{ get_url(path="site.webmanifest") | safe }}">
   {% endif %}
