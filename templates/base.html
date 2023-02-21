@@ -10,45 +10,56 @@
 {% import 'macros/docs-navigation.html' as macros_navigation -%}
 {% import 'macros/docs-toc.html' as macros_toc -%}
 <!DOCTYPE html>
-<html lang="{{ config.extra.language_code | default(value="en-US") }}">
+<html lang="{{ config.extra.language_code | default(value=" en-US") }}">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
-<style>
-  * {
-    font-family: "Rubik";
-  }
-</style>
-<link rel="stylesheet" href="/css/line-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
-{{ macros_head::resource() }}
-{{ macros_head::stylesheet() }}
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    /* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
 
-{% block seo %}
+    * {
+      font-family: "Rubik";
+    }
+  </style>
+  <link rel="stylesheet" href="/css/line-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
+  {{ macros_head::resource() }}
+  {{ macros_head::stylesheet() }}
+
+  {% block seo %}
   {% if config.extra.title_separator %}
-    {% set title_separator = " " ~ config.extra.title_separator ~ " " %}
+  {% set title_separator = " " ~ config.extra.title_separator ~ " " %}
   {% else %}
-    {% set title_separator = " | " %}
+  {% set title_separator = " | " %}
   {% endif %}
-{% endblock seo %}
+  {% endblock seo %}
 
-{{ macros_head::favicons() }}
-{% block math %}{{ macros_math::math() }}{% endblock math %}
+  {{ macros_head::favicons() }}
+  {% block math %}{{ macros_math::math() }}{% endblock math %}
 </head>
 {% block body %}{% set page_class="home" %}{% endblock body %}
+
 <body class="{{ page_class }}">
   {% block header %}
-    {{ macros_header::header(current_section="/") }}
+  {{ macros_header::header(current_section="/") }}
   {% endblock header %}
 
   {% block content %}{% endblock content %}
 
   {% block footer %}
-    {{ macros_footer::footer() }}
+  {{ macros_footer::footer() }}
   {% endblock footer %}
 
-  {{ macros_js::javascript() }}  
+  {{ macros_js::javascript() }}
 </body>
+
 </html>
