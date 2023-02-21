@@ -2,7 +2,7 @@
 title = "TinyAnimal: Animal Recognition Practices on Grove Vision AI"
 description = ""
 date = 2023-02-20T12:00:00+00:00
-updated = 2023-02-20T12:00:00+00:00
+updated = 2023-02-21T12:00:00+00:00
 draft = false
 template = "blog/page.html"
 
@@ -18,11 +18,6 @@ lead = "In the TinyAnimal project, I will present the practices of EdgeML on the
 <p align="center">The wild without a reliable internet connection<p/>
 </div>
 
-# Things used in this project
-### Hardware components
-[Seeed Studio SenseCAP K1100 - The Sensor Prototype Kit with LoRa® and AI](https://www.hackster.io/seeed/products/sensecap-k1100-the-sensor-prototype-kit-with-lora-and-ai1?ref=project-7fe497)
-### Software apps and online services
-JoinBase
 # Story
 ### Problem
 There are many projects focus on the hardware of edge AI/ML. However, in real scenarios, there is no significant practice of learning details in software side on top of products to show, and this paper makes up for this deficiency.
