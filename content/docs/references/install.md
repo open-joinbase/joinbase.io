@@ -16,13 +16,38 @@ top = false
 
 ## Install
 
+### Plain file
+
 JoinBase does not need to be installed. The JoinBase release is shipped in a compressed package. Just decompress it to any directory of your machine. Then, go that directory to use. 
+
+### Docker image
+
+If you prefer the Docker way, try JoinBase with the above simplest command:
+
+```bash
+docker run --net=host -P -d joinbase/joinbase
+```
+
+This command will start a JoinBase server wiht the default conf in a detached container by exposing all ports to your host.
+
+But **NOTE** that JoinBase has no `default user` concept, you should setup a user before going ahead by the following command:
+
+```bash
+docker run --net=host --entrypoint /joinbase/base_admin -it joinbase/joinbase create_user abc
+```
+
+Just check the server by pinging with curl, like:
+```bash
+curl -v -s -H 'X-JoinBase-User: abc' -H 'X-JoinBase-Key: abc' -X GET 'http://127.0.0.1:8080/ping'
+```
+
+Finally, note that all data and change are inside of the container for above quick commands. They may disappear when that container ternimated. For production use, you should customize JoinBase's conf to use dedicated directories. A sample conf file named "base.conf" is provided with every release. Just dowload and customize it yourself.
 
 ## Prerequisites
 
 * Operation system
 
-Currently, JoinBase only supports Linux distributions with modern kernels, example, [latest Ubuntu 20.04.4+ LTS](https://releases.ubuntu.com/20.04/). Feel free to ask for help if you have problems on the running operation system. We are good at running latest kernels on several-dollar-level old SBCs. ([Windows WSL2 with latest kernel](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) also works greatly.)
+Currently, JoinBase only supports Linux distributions with modern kernels, example, [latest Ubuntu 20.04.4+ LTS](https://releases.ubuntu.com/20.04/). Feel free to ask for help if you have problems on the running operation system. We are good at running latest kernels on several-dollar SBCs. ([Windows WSL2 with latest kernel](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) also works greatly.)
 
 * Storage
 
