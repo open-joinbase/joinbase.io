@@ -10,7 +10,7 @@ template = "blog/page.html"
 contact = ["joinbase0"]
 
 [extra]
-lead = "In JoinBase 2022.12, we introduced the HTTP interface, making JoinBase a general-purpose multi-protocol time series database."
+lead = "In JoinBase 2022.12, we introduced the HTTP interface, making JoinBase a general-purpose multi-protocol time series data service platform."
 
 +++
 
