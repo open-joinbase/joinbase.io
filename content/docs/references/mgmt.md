@@ -19,7 +19,7 @@ top = false
 After config, you can start the server of JoinBase:
 
 ```bash
-base start
+./joinbase_start
 ```
 
 The JoinBase server will listen on multiple ports to accept connections with different protocols.
@@ -27,7 +27,7 @@ The JoinBase server will listen on multiple ports to accept connections with dif
 To gracefully stop the server of JoinBase:
 
 ```bash
-base stop
+./joinbase_stop
 ```
 
 ## Administration

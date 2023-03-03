@@ -2,12 +2,12 @@
 title = "JoinBase Tips Series #1: Quick Start JoinBase"
 description = ""
 date = 2023-02-22T12:00:00+00:00
-updated = 2023-02-22T12:00:00+00:00
+updated = 2023-03-02T12:00:00+00:00
 draft = false
 template = "blog/page.html"
 
 [taxonomies]
-contact = ["joinbase0"]
+contact = ["jblchen"]
 
 [extra]
 lead = "Let's take a minute to get started quickly and complete your first query in JoinBase!"
@@ -28,9 +28,18 @@ Compared with the cumbersome installation process of other databases, the instal
 
 ### Install
 
-Compared with the cumbersome installation process of other databases, **the "installation" of JoinBase is very fast**, because JoinBase does not need to be installed.
+Compared with the cumbersome installation process of other databases, JoinBase does not need to be installed: JoinBase is provided in the form of a compressed package, just unzip it to any directory on your machine, and run it in this directory.
 
-JoinBase is provided in the form of a compressed package, just unzip it to any directory on your machine, and run it in this directory.
+### Install Client Console
+
+You should choose one client to manage JoinBase. We suggest using the most popular PostgreSQL protocol for starting. In Ubuntu, you can try the following commands to get PostgreSQL client:
+
+```bash
+sudo apt-get update
+sudo apt-get install postgresql-client
+```
+
+JoinBase supports any PostgreSQL-compatible client and driver. For more information and use cases, please refer to: [PostgreSQL Interface](/docs/references/postgresql)
 
 # Configure and start the server
 

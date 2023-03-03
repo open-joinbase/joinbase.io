@@ -78,7 +78,7 @@ library = "katex" # options: "katex", "mathjax". default is "katex".
 [extra.open]
 enable = true
 # this image will be used as fallback if a page has no image of its own
-image = "doks.png"
+image = "tb-logo.png"
 #twitter_site = ""
 #twitter_creator = ""
 #facebook_author = ""

@@ -2,12 +2,12 @@
 title = "JoinBase Tips Series #2: Using HTTP Interface in JoinBase"
 description = ""
 date = 2023-02-23T12:00:00+00:00
-updated = 2023-02-23T12:00:00+00:00
+updated = 2023-03-03T12:00:00+00:00
 draft = false
 template = "blog/page.html"
 
 [taxonomies]
-contact = ["joinbase0"]
+contact = ["jblchen"]
 
 [extra]
 lead = "In JoinBase 2022.12, we introduced the HTTP interface, making JoinBase a general-purpose multi-protocol time series data service platform."
