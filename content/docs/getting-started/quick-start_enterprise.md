@@ -62,6 +62,8 @@ base_admin create_user abc abc
 
 ## Connect to JoinBase
 
+
+
 After setup an `abc` user, You can use this user to connect to our PostgreSQL wire protocol compatible server.
 
 ```bash
@@ -81,6 +83,10 @@ See more about JoinBase language in [Language](/docs/references/lang/) page.
 > 
 > append `-d db_name` to psql to make psql connected to that database in default.
 
+
+> 🔍
+> 
+> Each login has a log. If the import or write does not generate a log, check whether the port is occupied by other services.
 ## Create Table
 
 There is nothing interesting unless we have some tables for writing data to or reading data from.
