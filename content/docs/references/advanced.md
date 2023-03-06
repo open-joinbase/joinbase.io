@@ -14,4 +14,6 @@ toc = true
 top = false
 +++
 
-Join our community ([Issues](https://github.com/open-joinbase/JoinBase/issues), [Discord](https://discord.gg/sqX6vfnURj)...) and you can request any help at the community.
+The latest integration release and more advanced or cutting-edge features could be obtained in the community.
+
+Join [our community](/community) and you can request any help at the community.

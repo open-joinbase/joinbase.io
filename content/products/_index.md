@@ -15,7 +15,7 @@ class = "page single"
   <!-- <div class="spacer spacer-line border-primary">&nbsp;</div> -->
   <div class="pricing-table">
     <div class="pricing-table-title">
-      <h5 class="pricing-title bg-com-hover text-white">COMMUNITY</h5>
+      <h5 class="pricing-title bg-com-hover text-white">Community</h5>
     </div>
     <div class="pricing-table-price text-center bg-com">
       <p class="title-font">
@@ -80,7 +80,7 @@ class = "page single"
   <!-- new table -->
   <div class="pricing-table">
     <div class="pricing-table-title">
-      <h5 class="pricing-title bg-ed-hover text-white">ENTERPRISE</h5>
+      <h5 class="pricing-title bg-ed-hover text-white">Pro</h5>
     </div>
     <div class="pricing-table-price text-center bg-ed">
       <p class="title-font">

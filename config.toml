@@ -129,10 +129,16 @@ url = "/ranking/"
 weight = 41
 
 [[extra.menu.main]]
-name = "Cloud"
-section = "cloud"
-url = "/cloud/"
-weight = 50
+name = "Communities"
+section = "Community"
+url = "/community/"
+weight = 41
+
+# [[extra.menu.main]]
+# name = "Cloud"
+# section = "cloud"
+# url = "/cloud/"
+# weight = 50
 
 [[extra.menu.social]]
 name = "GitHub"
