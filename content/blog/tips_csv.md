@@ -1,5 +1,5 @@
 +++
-title = "JoinBase Tips Series #3: Using HTTP Interface in JoinBase"
+title = "JoinBase Tips Series #3: Importing CSV Datasets into JoinBase"
 description = ""
 date = 2023-03-06T12:00:00+00:00
 updated = 2023-03-06T12:00:00+00:00
@@ -7,10 +7,10 @@ draft = false
 template = "blog/page.html"
 
 [taxonomies]
-contact = ["joinbase0"]
+contact = ["jblchen"]
 
 [extra]
-lead = "In JoinBase 2023.03, we have added a high-performance local data import function. The new import feature is so fast that you can import the 400GB, 1 billion record NYC taxi dataset in under 2 minutes!"
+lead = "In JoinBase 2023.03, we have added a high-performance local data import feature to the binary. The new importing feature is so fast that the csv files of 450-GB or 1-billion-record NYC taxi dataset can be imported into JoinBase in 2 minutes!"
 
 +++
 
@@ -101,7 +101,7 @@ As you can see, the CSV dataset was successfully imported into JoinBase!
 
 # And one more thing
 
-The CSV import feature of this article was introduced in JoinBase 2023.03, but at the time of writing, we have not officially released JoinBase 2023.03. In order to encourage more interested users to participate in the community, we provide a weekly update version of JoinBase in the Chinese and English communities] . Welcome to the community to get the latest development version!
+The CSV import feature of this article was introduced in JoinBase 2023.03, but at the time of writing, we have not officially released JoinBase 2023.03. In order to encourage more interested users to participate in the community, we provide the weekly integration release in the [kinds of communities](/community). Join us!
 
 JoinBase provides a lot of value beyond the peers of this era. We sincerely invite more users to join our community. JoinBase can help you!
 
