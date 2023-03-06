@@ -32,3 +32,5 @@ The active community members will regularly selected as our **JoinBase Friends**
 
 ![WeChat Community](/imgs/joinbase_wetchat_group.png)
 
+Or from [the picture in the github](https://github.com/open-joinbase/JoinBase/blob/main/community/wechat.md)
+
