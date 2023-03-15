@@ -1,0 +1,146 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>Payload Mapping | JoinBase</title><meta content="JoinBase, a single-binary AIoT-first data-service platform." name=description><link href=https://joinbase.io/docs/references/mapping/ rel=canonical><meta content="Payload Mapping" property=og:title><meta content="JoinBase, a single-binary AIoT-first data-service platform." property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/docs/references/mapping/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2021-12-01T08:20:00+00:00 property=og:updated_time><meta content="Payload Mapping" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://joinbase.io/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "References",
+            "item": "https://joinbase.io/docs/references/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Mapping",
+            "item": "https://joinbase.io/docs/references/mapping/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class=nav-item><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>Getting Started</h3><ul class=list-unstyled><li><a class=docs-link href=https://joinbase.io/docs/getting-started/introduction/>Introduction</a><li><a class=docs-link href=https://joinbase.io/docs/getting-started/quick-start-enterprise/>Quick Start for Enterprise</a><li><a class=docs-link href=https://joinbase.io/docs/getting-started/quick-start-cloud/>Quick Start for Cloud</a></ul><h3>Reference</h3><ul class=list-unstyled><li><a class=docs-link href=https://joinbase.io/docs/references/concept/>Concepts</a><li><a class=docs-link href=https://joinbase.io/docs/references/install/>Installation</a><li><a class=docs-link href=https://joinbase.io/docs/references/conf/>Configuration</a><li><a class=docs-link href=https://joinbase.io/docs/references/mgmt/>Management</a><li><a class=docs-link href=https://joinbase.io/docs/references/lang/>Language</a><li><a class=docs-link href=https://joinbase.io/docs/references/topics/>Topics</a><li><a class="docs-link active" href=https://joinbase.io/docs/references/mapping/>Payload Mapping</a><li><a class=docs-link href=https://joinbase.io/docs/references/mqtt/>MQTT Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/http/>HTTP Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/websocket/>WebSocket Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/postgresql/>PostgreSQL Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/extensions/>Extensions</a><li><a class=docs-link href=https://joinbase.io/docs/references/performance/>Performance Tips</a><li><a class=docs-link href=https://joinbase.io/docs/references/ha/>High Availability</a><li><a class=docs-link href=https://joinbase.io/docs/references/advanced/>Advanced Features</a><li><a class=docs-link href=https://joinbase.io/docs/references/glossary/>Glossary</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=https://joinbase.io/docs/references/mapping/#payload>Payload</a><li><a href=https://joinbase.io/docs/references/mapping/#mapping-mechanisms>Mapping Mechanisms</a></li><ul><li><a href=https://joinbase.io/docs/references/mapping/#automatic-mapping>Automatic Mapping</a><li><a href=https://joinbase.io/docs/references/mapping/#rule-based-mapping>Rule Based Mapping</a><li><a href=https://joinbase.io/docs/references/mapping/#user-defined-mapping>User Defined Mapping</a></ul></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-10"><h1>Payload Mapping</h1><p class=lead>In the JoinBase, we provide several payload mapping mechanisms to make users easily mapping any complex data to the JoinBase's structured table.<h2 id=payload>Payload</h2><p>JoinBase supports two built-in kinds of payload in the body of HTTP/MQTT message: <a href=https://en.wikipedia.org/wiki/Comma-separated_values>CSV</a> and <a href=https://en.wikipedia.org/wiki/JSON>JSON</a>. Futhermore, via the mechanism of UDM(User Defined Mapping), JoinBase can support the arbitrary user defined mapping logic.<h2 id=mapping-mechanisms>Mapping Mechanisms</h2><h4 id=automatic-mapping>Automatic Mapping</h4><p>The automatic mapping is very simple and direct: <strong>the top-level JSON field name corresponds directly to the table column name.</strong><blockquote><p>🔍<p>You do <strong>not need to provide any explicit mapping definition</strong>, if you can design one simple 1-1 mapping enabled message payload in advance.</blockquote><p>Let's see an example:<ol><li>Connect the test JoinBase server.</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>$</span><span> psql</span><span style=color:#bf616a;> -U</span><span> username</span><span style=color:#bf616a;> -d</span><span> test_db</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1
+</span></code></pre><ol start=2><li>Create a database and a simple table without any explicit mapping attribute.</ol><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>> </span><span style=color:#b48ead;>create database </span><span style=color:#8fa1b3;>test_db</span><span>;
+</span><span>> </span><span style=color:#b48ead;>create table </span><span style=color:#8fa1b3;>test_tab</span><span>(ci8 Int8, cu64 Int64, cts </span><span style=color:#b48ead;>DateTime</span><span>);
+</span></code></pre><ol start=3><li>Write a corresponding data to the JoinBase default MQTT broker by Mosquitto tool <sup class=footnote-reference><a href=#footnote>1</a></sup>.</ol><p>in CSV:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>$</span><span> mosquitto_pub</span><span style=color:#bf616a;> -d -t</span><span> /test_db/test_tab</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -p</span><span> 1883</span><span style=color:#bf616a;> -u</span><span> username</span><span style=color:#bf616a;> -P</span><span> password</span><span style=color:#bf616a;> -m </span><span>'</span><span style=color:#a3be8c;>-1,123456,2021-09-08T13:42:29+08:00</span><span>'
+</span></code></pre><p>in JSON:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>$</span><span> mosquitto_pub</span><span style=color:#bf616a;> -d -t</span><span> /test_db/test_tab</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -p</span><span> 1883</span><span style=color:#bf616a;> -u</span><span> username</span><span style=color:#bf616a;> -P</span><span> password</span><span style=color:#bf616a;> -m </span><span>'</span><span style=color:#a3be8c;>{"ci8":-1,"cu64":123456,"cts":"2021-09-08T13:42:29+08:00"}</span><span>'
+</span></code></pre><ol start=4><li>Check the written data.</ol><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>> </span><span style=color:#b48ead;>select </span><span style=color:#bf616a;>* </span><span style=color:#b48ead;>from</span><span> test_tab;
+</span><span> ci8 |         cts         | cu64 
+</span><span style=color:#65737e;>-----+---------------------+------
+</span><span>  -</span><span style=color:#d08770;>1</span><span> | </span><span style=color:#d08770;>2021</span><span>-</span><span style=color:#d08770;>09</span><span>-</span><span style=color:#d08770;>08 13</span><span>:</span><span style=color:#d08770;>42</span><span>:</span><span style=color:#d08770;>29</span><span> |  </span><span style=color:#d08770;>100
+</span><span>(</span><span style=color:#d08770;>1</span><span> row)
+</span></code></pre><blockquote><p>🔍<p>Batched message ingestion: payload in CSV supports multiple lines as multiple records into the table.</blockquote><h4 id=rule-based-mapping>Rule Based Mapping</h4><p>If you message payload design does not follow the default automatic mapping rule, you can explicitly specify your mapping logics via one <strong>mapping rule definition language</strong>.<p>The rule definition language is simple and <a href=https://www.rfc-editor.org/rfc/rfc6901>JSON Pointer</a> inspired.<p>The rule definition language is specified in the table attribute name <code>JSON_MAPPINGS</code> when you create the table schema. You can change the <code>JSON_MAPPINGS</code> attribute in the latter with <code>alter</code> command.<p>Let see an example <code>JSON_MAPPINGS</code> attribute:<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>JSON_MAPPINGS ci8 &LT- '</span><span style=color:#a3be8c;>/a/b</span><span>', cu64 &LT- '</span><span style=color:#a3be8c;>/c/0</span><span>', cts &LT- '</span><span style=color:#a3be8c;>/d/1/e</span><span>'
+</span></code></pre><p>the key points of the JSON_MAPPINGS table attribute:<ol><li>The entry <code>ci8 &LT- '/a/b'</code> just defines a mapping from the JSON Pointer path pattern <code>'/a/b'</code> to the table column named <code>ci8</code>. That is, the value of column <code>ci8</code> will be extracted from the JSON message's path <code>'/a/b'</code>.<li>If no mapping defined in this, it is still assumed the table column will be extracted via default mapping.</ol><blockquote><p>🔍<p>Unlike a file system, the "/" query in JSON Pointer does not identify the root. Instead, "" is the root and "/" is the child of the root whose key is the empty string. Similarly, "/xyz" and "/xyz/" are two different nodes.</blockquote><h5 id=1-1-mapping>1-1 Mapping</h5><p>If your JSON message has no dynamic array, then 1-1 mapping rule definition is enough.<p>Let's see an example:<ol><li>Create a test table based the path pattern syntax</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>create</span><span> table test_tab1(
+</span><span>  </span><span style=color:#bf616a;>ci8</span><span> Int8, cu64 Int64, cts DateTime
+</span><span>) 
+</span><span style=color:#bf616a;>JSON_MAPPINGS</span><span> ci8 &LT- '</span><span style=color:#a3be8c;>/a/b</span><span>', cu64 &LT- '</span><span style=color:#a3be8c;>/c/0</span><span>', cts &LT- '</span><span style=color:#a3be8c;>/d/1/e</span><span>';
+</span></code></pre><ol start=2><li>Write a corresponding JSON data by the JoinBase default MQTT broker.</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>$</span><span> mosquitto_pub</span><span style=color:#bf616a;> -d -t</span><span> /test_db/test_tab1</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -p</span><span> 1883</span><span style=color:#bf616a;> -u</span><span> username</span><span style=color:#bf616a;> -P</span><span> password</span><span style=color:#bf616a;> -m </span><span>'</span><span style=color:#a3be8c;>{"a":{"b": -1},"c": [100],"d":["", {"e": "2021-09-08T13:42:29"}]}</span><span>'
+</span></code></pre><ol start=3><li>Check the written data.</ol><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>> </span><span style=color:#b48ead;>select </span><span style=color:#bf616a;>* </span><span style=color:#b48ead;>from</span><span> test_tab1;
+</span><span> ci8 |         cts         | cu64 
+</span><span style=color:#65737e;>-----+---------------------+------
+</span><span>  -</span><span style=color:#d08770;>1</span><span> | </span><span style=color:#d08770;>2021</span><span>-</span><span style=color:#d08770;>09</span><span>-</span><span style=color:#d08770;>08 13</span><span>:</span><span style=color:#d08770;>42</span><span>:</span><span style=color:#d08770;>29</span><span> |  </span><span style=color:#d08770;>100
+</span><span>(</span><span style=color:#d08770;>1</span><span> row)
+</span></code></pre><h5 id=dynamic-array-flattening>Dynamic Array Flattening</h5><p>For JSON message with the dynamic array, JoinBase's rule definition language provides a flattening mapping pattern syntax: <strong>one and only one array now can be flatten into multiple table records via wildcard symbol <code>*</code></strong>.<blockquote><p>🔍<p>Dynamics will compromise the performance. When you can control the format of message, 1-1 mapping will provide better performance.</blockquote><p>Let's see a quick example about how dynamic array flattening help us:<ol><li>A sample JSON message:</ol><pre class=language-json data-lang=json style=background-color:#2b303b;color:#c0c5ce;><code class=language-json data-lang=json><span>{
+</span><span>  "</span><span style=color:#a3be8c;>timestamp</span><span>": </span><span style=color:#d08770;>1636666666</span><span>,
+</span><span>  "</span><span style=color:#a3be8c;>dev_id</span><span>": "</span><span style=color:#a3be8c;>id-01</span><span>",
+</span><span>  "</span><span style=color:#a3be8c;>dev_name</span><span>": "</span><span style=color:#a3be8c;>abc</span><span>",
+</span><span>  "</span><span style=color:#a3be8c;>data</span><span>": [
+</span><span>    [
+</span><span>      </span><span style=color:#d08770;>1</span><span>,
+</span><span>      </span><span style=color:#d08770;>25.1
+</span><span>    ],
+</span><span>    [
+</span><span>      </span><span style=color:#d08770;>2</span><span>,
+</span><span>      </span><span style=color:#d08770;>25.5
+</span><span>    ],
+</span><span>    [
+</span><span>      </span><span style=color:#d08770;>3</span><span>,
+</span><span>      </span><span style=color:#d08770;>25.9
+</span><span>    ]
+</span><span>  ]
+</span><span>}
+</span></code></pre><ol start=2><li>Create a test table based the path pattern syntax:</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>create</span><span> table sensors(
+</span><span>  </span><span style=color:#bf616a;>timestamp</span><span> DateTime, 
+</span><span>  </span><span style=color:#bf616a;>dev_id</span><span> String, 
+</span><span>  </span><span style=color:#bf616a;>dev_name</span><span> String,
+</span><span>  </span><span style=color:#bf616a;>sensor_id</span><span> UInt32,
+</span><span>  </span><span style=color:#bf616a;>value</span><span> Float32
+</span><span>) 
+</span><span style=color:#bf616a;>JSON_MAPPINGS 
+</span><span>    </span><span style=color:#bf616a;>timestamp </span><span>&LT- '</span><span style=color:#a3be8c;>/timestamp</span><span>', 
+</span><span>    </span><span style=color:#bf616a;>dev_id </span><span>&LT- '</span><span style=color:#a3be8c;>/dev_id</span><span>', 
+</span><span>    </span><span style=color:#bf616a;>dev_name </span><span>&LT- '</span><span style=color:#a3be8c;>/dev_name</span><span>',
+</span><span>    </span><span style=color:#bf616a;>sensor_id </span><span>&LT- '</span><span style=color:#a3be8c;>/data/*/0</span><span>',
+</span><span>    </span><span style=color:#bf616a;>value </span><span>&LT- '</span><span style=color:#a3be8c;>/data/*/1</span><span>';    
+</span></code></pre><ol start=3><li>Send the above sample message:</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>mosquitto_pub -d -t</span><span> /abc/sensors</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -p</span><span> 1883</span><span style=color:#bf616a;> -u</span><span> abc</span><span style=color:#bf616a;> -P</span><span> abc</span><span style=color:#bf616a;> -m </span><span>'</span><span style=color:#a3be8c;>{"timestamp":1636666666,"dev_id":"id-01","dev_name":"abc","data":[[1,25.1],[2,25.5],[3,25.9]]}</span><span>'
+</span></code></pre><ol start=4><li>Check the saved records in JoinBase:</ol><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>abc=> </span><span style=color:#b48ead;>select </span><span style=color:#bf616a;>* </span><span style=color:#b48ead;>from</span><span> sensors;
+</span><span> dev_id | dev_name | sensor_id |      </span><span style=color:#b48ead;>timestamp</span><span>      | value 
+</span><span style=color:#65737e;>--------+----------+-----------+---------------------+-------
+</span><span> id-</span><span style=color:#d08770;>01</span><span>  | abc      |         </span><span style=color:#d08770;>1</span><span> | </span><span style=color:#d08770;>2021</span><span>-</span><span style=color:#d08770;>11</span><span>-</span><span style=color:#d08770;>12 05</span><span>:</span><span style=color:#d08770;>37</span><span>:</span><span style=color:#d08770;>46</span><span> |  </span><span style=color:#d08770;>25</span><span>.</span><span style=color:#d08770;>1
+</span><span> id-</span><span style=color:#d08770;>01</span><span>  | abc      |         </span><span style=color:#d08770;>2</span><span> | </span><span style=color:#d08770;>2021</span><span>-</span><span style=color:#d08770;>11</span><span>-</span><span style=color:#d08770;>12 05</span><span>:</span><span style=color:#d08770;>37</span><span>:</span><span style=color:#d08770;>46</span><span> |  </span><span style=color:#d08770;>25</span><span>.</span><span style=color:#d08770;>5
+</span><span> id-</span><span style=color:#d08770;>01</span><span>  | abc      |         </span><span style=color:#d08770;>3</span><span> | </span><span style=color:#d08770;>2021</span><span>-</span><span style=color:#d08770;>11</span><span>-</span><span style=color:#d08770;>12 05</span><span>:</span><span style=color:#d08770;>37</span><span>:</span><span style=color:#d08770;>46</span><span> |  </span><span style=color:#d08770;>25</span><span>.</span><span style=color:#d08770;>9
+</span><span>(</span><span style=color:#d08770;>3</span><span> rows)
+</span></code></pre><p>The biggest difference between 1-1 mapping and dynamic array flattening is that, <strong>one JSON message has been flattened into 3 rows/records in the table</strong>. The data array's inner arrays' first element goes to the sensor_id field separately, and inner arrays' second element goes to the value field separately.<h4 id=user-defined-mapping>User Defined Mapping</h4><p>Arbitrary user defined mapping logic is supported via JoinBase's .<p>Via the mechanism of <a href=/docs/references/extensions/>UDM(User Defined Mapping)</a>, JoinBase can support the arbitrary user defined mapping logic. For example, you can use <a href=https://github.com/protocolbuffers/protobuf>Protocol Buffers</a> or <a href=https://google.github.io/flatbuffers/>FlatBuffers</a> binary message format in your payload if you like.<hr><div class=footnote-definition id=footnote><sup class=footnote-definition-label>1</sup><p><code>mosquitto_pub</code> is a simple MQTT command line tool, you can get it <a href=https://mosquitto.org/download/>here</a>.</div><div class="docs-navigation d-flex justify-content-between"><a href=https://joinbase.io/docs/getting-started/quick-start-cloud/> <div class="card my-1"><div class="card-body py-2">← Quick Start for Cloud</div></div> </a></div></main></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>

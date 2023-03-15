@@ -1,0 +1,105 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>JoinBase 2022.11: An IoT Database with Built-in MQTT Broker | JoinBase</title><meta content="JoinBase, a single-binary AIoT-first data-service platform." name=description><link href=https://joinbase.io/blog/joinbase-as-mqtt-broker/ rel=canonical><meta content="JoinBase 2022.11: An IoT Database with Built-in MQTT Broker" property=og:title><meta content="JoinBase, a single-binary AIoT-first data-service platform." property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/blog/joinbase-as-mqtt-broker/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2022-11-08T12:00:00+00:00 property=og:updated_time><meta content="JoinBase 2022.11: An IoT Database with Built-in MQTT Broker" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/blog/joinbase-as-mqtt-broker/"
+      },
+      "headline": "JoinBase 2022.11: An IoT Database with Built-in MQTT Broker",
+      "image": ,
+      "datePublished": "2022-11-08T12:00:00+00:00",
+      "dateModified": "2022-11-08T12:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "JoinBase 2022.11: An IoT Database with Built-in MQTT Broker"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoinBase 2022.11: An IoT Database with Built-in MQTT Broker",
+        
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/tb-logo.png"
+        }
+        
+      },
+      "description": "JoinBase, a single-binary AIoT-first data-service platform."
+    }
+    </script><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Blog",
+            "item": "https://joinbase.io/blog/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Joinbase As Mqtt Broker",
+            "item": "https://joinbase.io/blog/joinbase-as-mqtt-broker/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="blog single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class="nav-item blog active"><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row justify-content-center"><div class="col-md-12 col-lg-12 col-xl-12"><article><div class=blog-header><h1>JoinBase 2022.11: An IoT Database with Built-in MQTT Broker</h1><p><small>Posted November 8, 2022 by <a class="stretched-link position-relative" href=https://joinbase.io/contact/joinbase0/>joinbase0</a> ‐ <strong>7 min read</strong></small><p></div><p class=lead>In the 2022.11 release, JoinBase now can be used as a high performance MQTT broker with full publishing/subscribing capabilities. According to the primary stressing, <b>the performance of the first full-broker-enabled JoinBase is ~5x faster than that of one popular broker EMQX (5.0.9)</b>.<h1 id=quick-intro>Quick Intro</h1><div class=text-center><img alt=joinbase class=img-fluid src=/imgs/blog/joinbase_as_mqtt_broker/joinbase_arch.png><p align=center>IoT data made simple with JoinBase!<p></div><p>JoinBase is a free all-in-one data stack built around our unique and innovative database technologies.<p>We are committed to simplifying the IoT data pipeline while delivering the highest production efficiency. By lowering the consumption threshold of IoT data, we believe that JoinBase can benefit every organization and individual in this era.<h1 id=why-built-in-broker>Why Built-in Broker</h1><p>The answer is, <strong>not only the built-in broker!</strong><p>The IoT data and data stack are expanding violently, and out of control for many enterprises. JoinBase wants to change this.<p>We plan to add more interesting IoT scenario simplifications and integrations in JoinBase to allow developers to build IoT data systems by using one or two simple techniques which they are familiar with, from zero to planetary scale.<h1 id=early-access-stressing>Early Access Stressing</h1><div class=text-center><img alt=joinbase class=img-fluid src=/imgs/blog/joinbase_as_mqtt_broker/stopwatch.jpg><p align=center>Let's stress!<p></div><p>In order to observe the performance of each brokers under the ultimate pressure, we, again like our <a href=/blog/intro_oidbs>OIDBS</a>, create a new fastest stressing/benchmarking tool called <code>MQTTBT</code>. In this new stressing tool, the total end-to-end ingestion throughput is proposed to evaluate. We will publish a dedicated blog article for introducing this tool soon (you can always request it in the community in advance).<p>The following the stressing process and the result of JoinBase 2022.11 in in 2p-1s (2 publisher to 1 subscriber):<div class=text-center><img alt="stress result of JoinBase" class=img-fluid src=/imgs/blog/joinbase_as_mqtt_broker/stress_results_joinbase.gif><p align=center>Stressing process and the result of JoinBase 2022.11 (gif)<p></div><p>Surprisingly, it is found that many popular brokers, like EMQX and HiveMQ CE, can not pass our stress tool under non-trivial QoS=0 ingestion connections.<p>When the pressure exceeds their capacity, EMQX will disconnect the subscribers, HiveMQ CE will drop outgoing messages even for 1p-1s. Ridiculously, for the lack of right documents, we still can not figure out how to config them to work under non-trivial ingestion connections after hours searching.<p>Although the message in QoS=0 is not guaranteed by the spec, the tacklings of these brokers are not IoT scenario friendly. (We discuss the good design in the later section.)<p>In the real-world IoT scenario, the sensor value is generated continuously, one loss point is not important, but QoS=0 provides 10x best performance than QoS=1. If the connection is lost, you just lose the in-flight message, which is usually one for that client. JoinBase guarantees that if the connection is reliable, the message even with QoS=0 is guaranteed to be stored reliably (assumed that the OS is running normally). Also in JoinBase, millions of connections and millions of messages are unified without any compromises. This brings more possibilities and greater flexibility to the design of large-scale IoT data transport networks.<div class=text-center><img alt="IoT scenarios" class=img-fluid src=/imgs/blog/joinbase_as_mqtt_broker/stress_results_emqx.gif><p align=center>Stressing process and the result of EMQX (gif)<p></div><p>The above gif is the EMQX stressing process and result in 2p-1s. It is easy to find that <b>the performance of the JoinBase 2022.11 is ~5x faster than that of one popular broker EMQX (5.0.9) in the same stressing condition</b>. The HiveMQ even does not pass our stressing in any p-s combination.<p>We will present a detailed benchmark report in the near future.<h1 id=safety-and-privacy>Safety and Privacy</h1><p>In benchmarking, we find that EMQX at least silently reads all disk infos in current system, like:<pre class=language-log data-lang=log style=background-color:#2b303b;color:#c0c5ce;><code class=language-log data-lang=log><span>2022-11-07T12:53:19.340116+00:00 [notice] alarm_handler: {set,{{disk_almost_full,"/data/n4"},[]}}
+</span></code></pre><p>Here, <code>/data/n4</code> is an unused disk in the system, but EMQX is put in another disk with nothing about knowing <code>/data/n4</code> in conf. Futhermore, EMQX enables its telemetry by default, like many other open-source products (for example, VSCode or TimescaleDB).<p>We strongly recommend that any infrastructure product should not collect any user information without explicit permission.<p>JoinBase keeps highest standard in the field of product safety and privacy:<ol><li><p>JoinBase do not silently write any data to the disk of users or any location of the Web.</p> <p>All data directories must be specified in the conf file. And we suggest you change to your onw directories at the first get started document.</p><li><p>You can do nothing to JoinBase if you do not create a dedicated user.</p> <p>In fact, the core philosophy of JoinBase is allow-list based. All external interactions are checked explicitly. You must create a new user to use JoinBase. (Don't worry, it is so quick). Compromises that often occur on other databases by the default initial configuration never happen in JoinBase.</p><li><p>JoinBase do not send any data out to any Web location.</p> <p>And JoinBase do not do any non-user-business background works, like telemetry. On the contrary, many distributions of open source projects collect various user information by default.</p></ol><h1 id=think-time>Think Time</h1><div class=text-center><img alt=joinbase class=img-fluid src=/imgs/blog/joinbase_as_mqtt_broker/think.jpg><p align=center>Why is JoinBase faster?<p></div><p>We don't want to fire any war between languages or systems. Here, we just show some thoughts under the hood which users should know to construct a performance critical engineering:<ol><li>Performance is largely independent of language, provided the language and system keep wise in its design.</ol><p>Of course, to make one language and system kept wise is hard.<p>Here, <a href=https://github.com/open-joinbase/>JoinBase</a> is done in <a href=https://www.rust-lang.org/>Rust</a>, correspondingly EMQX is done in <a href=https://en.wikipedia.org/wiki/Erlang_(programming_language)>Erlang</a> and HiveMQ CE is done in Java.<p>Erlang is an interesting language to provide wide features to enable Erlang based network application programming easier. Java use GC to make developer happy without worries about memory safety. However, <strong>there is no free lunch</strong>. Features come with kinds of prices inevitably.<p>The Rust philosophy, conversely, is <a href=https://en.wikipedia.org/wiki/KISS_principle>KISS</a>. All the things like actors or hot-swappiness should and could be done in the external mechanism. JoinBase follows the Rust philosophy and built from scratch. We keep every call in great engineering and performance shape for our users. We even fix the broken message channel in recent Rust standard library. Yes, even official language standard library has problems! Don't rely blindly!<ol start=2><li>Correct design philosophy is important for your business</ol><p>One common problem HiveMQ CE and EMQX mentioned in above section is that, they are not resilient enough under stressful situations.<p>The right reaction under high load is <code>back-pressure</code>. From the kernel to the application layer, we have many opportunities to do this kind of transport back-pressure. Blindly killing connection or messages is the ugliest choice. It makes the system highly underutilized, and more importantly, unavailable in high pressure.<h1 id=coming-soon>Coming Soon</h1><ol><li>Stress/benchmark mainstream brokers with open-source tools.</ol><p>Any benchmark which can not be reproduced is meaningless. Any benchmark without apple-to-apple comparison is meaningless as well. We are responsible for providing insights to all IoT users on how to choose high performance data system.<p>We will release the complete benchmark report in the near future. Stay tuned!<ol start=2><li>Beyond the interoperability between database and MQTT.</ol><p>In JoinBase, we have made the <code>Topic</code> concept in MQTT and the <code>Table</code> concept in database exchangeable. Soon, we will enable the query capability via MQTT subscribing. This shows how we greatly push both two communities by creating a new work pattern!<ol start=3><li>Any great idea proposed by users in <a href=https://github.com/open-joinbase/joinbase/issues>the community issues</a>.</ol><h1 id=more-links>More Links</h1><p>Get your IoT infrastructure one step ahead with free JoinBase by <a href=/request>request latest free JoinBase</a>.<p>Talk with JoinBase developers in <a href=https://discord.gg/sqX6vfnURj>the Discord server</a>.<p>Watch or submit your ideas <a href=https://github.com/open-joinbase/joinbase>in the community</a>.</article></div></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>

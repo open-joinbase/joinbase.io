@@ -1,0 +1,98 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data | JoinBase</title><meta content="JoinBase, a single-binary AIoT-first data-service platform." name=description><link href=https://joinbase.io/blog/intro-oidbs/ rel=canonical><meta content="OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data" property=og:title><meta content="JoinBase, a single-binary AIoT-first data-service platform." property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/blog/intro-oidbs/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2022-10-19T12:00:00+00:00 property=og:updated_time><meta content="OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/blog/intro-oidbs/"
+      },
+      "headline": "OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data",
+      "image": ,
+      "datePublished": "2022-10-18T12:00:00+00:00",
+      "dateModified": "2022-10-19T12:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data",
+        
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/tb-logo.png"
+        }
+        
+      },
+      "description": "JoinBase, a single-binary AIoT-first data-service platform."
+    }
+    </script><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Blog",
+            "item": "https://joinbase.io/blog/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Intro Oidbs",
+            "item": "https://joinbase.io/blog/intro-oidbs/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="blog single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class="nav-item blog active"><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row justify-content-center"><div class="col-md-12 col-lg-12 col-xl-12"><article><div class=blog-header><h1>OIDBS: An Open Source MQTT Driven Benchmark Suite for Massive IoT Data</h1><p><small>Posted October 18, 2022 by <a class="stretched-link position-relative" href=https://joinbase.io/contact/joinbase0/>joinbase0</a> ‐ <strong>4 min read</strong></small><p></div><p class=lead><a href=https://github.com/open-joinbase/oidbs>OIDBS (Open IoT Database Benchmark Suite)</a> has been open sourced for benchmarking massive IoT messaging and end-to-end data stack performance.<h1 id=intro>Intro</h1><p>In the development of JoinBase, we complete the <a href=https://github.com/open-joinbase/oidbs>OIDBS (Open IoT Database Benchmark Suite)</a>. Because we find that there is not a simple, flexible, high performance tool or framework to help benchmarking an IoT end-to-end data stack. To enable a concise end-to-end experience is important for in-production data systems. Because a full IoT data stack may be complex, there can be a huge gap between the local sub-system and the global system.<h1 id=make-benchmark-fast-and-simple>Make Benchmark Fast and Simple</h1><img alt="OIDBS Arch" class=img-fluid src=/imgs/blog/intro_oidbs/oidbs_arch.png><h3 id=composable-commands>Composable Commands</h3><p>One key design of OIDBS is: composable commands.<p>The benchmark suite consists of three commands: gen, import and bench.<ol><li><code>gen</code>: to generate the controlled, reproducible message data to files on disks in CSV or JSON format.<li><code>import</code>: to import the CSV or JSON format files to the MQTT brokers or PostgreSQL/Timescale servers.<li><code>bench</code>: run preset SQL queries on specific targets.</ol><p>These three composable commands decouple main capabilities of various IoT and data scenarios. And the decoupling makes the benchmark faster and less overhead. For example, if the message is generated in-place in the hot loop to send the message, the data calculating and filling must interfere with sending.<h3 id=hierarchical-pluggability>Hierarchical Pluggability</h3><p>For maximum external understanding and contribution, we offer pluggable designs at various levels with minimal architecture. The whole OIDBS is easily to be extended from the data source formats, the transport protocols to backend servers via standard interfaces.<h3 id=benchmark-models>Benchmark Models</h3><p>The concept, <code>benchmark model</code>, has been proposed to the core of OIDBS extensions. A benchmark model is used for grouping different benchmark dataset and its corresponding data-gens, schemas, queries.<p>In the first launch of JoinBase and OIDBS, two models - 'nyct_lite' and 'nyct_strip' are benched:<table><thead><tr><th style="text-align: left">model name<th style="text-align: left">model dataset size<th style="text-align: left">description<th style="text-align: left">how to get<tbody><tr><td style="text-align: left">nyct_lite<td style="text-align: left">10906860 rows<td style="text-align: left">New York City Dataset used in official Timescale <br> (compressed in one 424MB file)<td style="text-align: left"><a href=https://docs.timescale.com/timescaledb/latest/tutorials/nyc-taxi-cab/>Timescale Docs</a><tr><td style="text-align: left">nyct_strip<td style="text-align: left">1000000000 rows<td style="text-align: left">Extended 1-billion-row New York City Dataset with stripped columns<br> (compressed in 13GB files)<td style="text-align: left"><a href=https://www.mediafire.com/folder/4xaot2rywzyd7/nyct_strip>download pre-made from mediafire</a> <br> or <br> prepare from <a href=https://github.com/toddwschneider/nyc-taxi-data>this github project</a></table><p align=center>Tab.1 OIDBS models introduction<p><p>These two models are derived from official, real-world <a href=https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page>New York city dataset</a>. More about why these two models proposed could be seen in <a href=/benchmark/#benchmark-model>the JoinBase's benchmark page</a>.<h1 id=demo>Demo</h1><p>Let's watch a simple example about how to use OIDBS to benchmark the throughput of the latest Mosquitto release in minutes. This video is also a great, quick-start demo for how to use the Mosquitto with its own client.<div align=center class=video-container><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/Y3ETIbGcZ6I?start=1" title="YouTube video player" allowfullscreen class=video frameborder=0 height=315 width=560></iframe></div><p align=center>Video: Quick Start to OIDBS<p><p>From the result of this demo, we can see that the performance of the forward throughput of the current Mosquitto release in WSL2(Ubuntu) with one-pub-one-sub is 10906860 messages / 43.48 seconds ~= 250K mps or 1.6GB / 43.48 seconds ~= 36MB(in csv format)/s.<p>However, the 250k messages/s with localhost is not good because one-pub-one-sub means the concurrency of connections is one. More importantly, we must point out that, the Windows environment is not suitable for benchmarking a MQTT broker, not mention that WSL2 is essentially a virtual machine. Here, we just show how easy to use the OIDBS benchmark. Because there is no difference between Linux and Windows WSL2 in the workflow. For non-production usages, this Windows setup is still acceptable.<h1 id=one-more-thing>One More Thing</h1><p>Finally, we are proud to point out that, for the same 1 connection concurrency condition, <a href=https://github.com/open-joinbase/JoinBase>our JoinBase</a> is still 30% faster than that of Mosquitto. But please note that, in JoinBase, we do many many heavy ultra works, including message parsing, message transferring, data computing and storing. In the near future, We will demo that, under the extreme pressure of OIDBS, the overwhelming performance advantage of JoinBase over the existing mainstream MQTT brokers, and welcome everyone to <a href=/request>request our free distribution</a>.<p>A new TPCx-IoT inspired benchmark model will be released soon. Watch our communities:<p><a href=https://github.com/open-joinbase/oidbs>OIDBS community</a><p><a href=https://github.com/open-joinbase/JoinBase>JoinBase community</a></article></div></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>

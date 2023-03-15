@@ -1,0 +1,106 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS | JoinBase</title><meta content="JoinBase, a single-binary AIoT-first data-service platform." name=description><link href=https://joinbase.io/blog/pstations/ rel=canonical><meta content="Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS" property=og:title><meta content="JoinBase, a single-binary AIoT-first data-service platform." property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/blog/pstations/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2022-10-26T12:00:00+00:00 property=og:updated_time><meta content="Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/blog/pstations/"
+      },
+      "headline": "Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS",
+      "image": ,
+      "datePublished": "2022-10-23T12:00:00+00:00",
+      "dateModified": "2022-10-26T12:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS",
+        
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/tb-logo.png"
+        }
+        
+      },
+      "description": "JoinBase, a single-binary AIoT-first data-service platform."
+    }
+    </script><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Blog",
+            "item": "https://joinbase.io/blog/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Pstations",
+            "item": "https://joinbase.io/blog/pstations/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="blog single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class="nav-item blog active"><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row justify-content-center"><div class="col-md-12 col-lg-12 col-xl-12"><article><div class=blog-header><h1>Pstations: TPCx-IoT Inspired IoT Data Benchmark Model for OIDBS</h1><p><small>Posted October 23, 2022 by <a class="stretched-link position-relative" href=https://joinbase.io/contact/joinbase0/>joinbase0</a> ‐ <strong>7 min read</strong></small><p></div><p class=lead>TPCx-IoT inspired IoT data benchmark model, named <b>Pstations</b>, has been added to <a href=https://github.com/open-joinbase/oidbs>OIDBS (Open IoT Database Benchmark Suite)</a>.<h1 id=problems>Problems</h1><img alt="IoT scenarios" class=img-fluid src=/imgs/blog/pstations/things.jpg><p align=center>How to benchmark the internet of things?<p><p>IoT scenarios are increasingly becoming scalable. From the case of big giants like that Apple which needs handling <a href=https://www.statista.com/statistics/1221051/apple-watch-users-worldwide/>hundreds of million Apple watches</a> to that of one small individual who just wants to build up a homebrew <a href=/blog/tinywild/>animal monitoring system</a>.<h1 id=motivation>Motivation</h1><p>In OIDBS, we have solved the methodologies of benchmark. Nextly, we may pick up for a nice data model. Two New York City taxi dataset based models have been proposed. The problem of them is, that they are fixed external data sources. A scalable and fast enough model is needed for the scalable IoT scenarios as mentioned.<p>Generally, any data sources can be chosen to do the benchmark. But it is better to refer to any useful previous work in that a real-world inspired model reduce the understanding resistance to the benchmark of users.<h1 id=tpcx-iot-screwed-up>TPCx-IoT Screwed Up</h1><img alt="IoT scenarios" class=img-fluid src=/imgs/blog/pstations/tpc.jpg><p align=center>How to benchmark the internet of things?<p><p><a href=https://www.tpc.org/tpcx-iot>TPCx-IoT</a> is a benchmark for IoT gateway systems proposed by <a href=https://www.tpc.org>TPC org</a>. But it has many problems:<ol><li><p>This benchmark is not user oriented but commercial vendor oriented. Like other "notorious" benchmarks proposed by TPC (for example, TPC-H and TPC-DS), the hardware is provided per vendor, different hardwares plus different softwares with "dedicated optimizations" make the result ranking totally no sense.</p><li><p>This benchmark is mainly for benching data system for IoT. There is no gateway ingestion interfaces considered in the spec. Then the benchmark in transporting is not standardized, which leaves the benchmark capabilities of this ingesting or importing suspectable. Although is mentioned in the spec, but there is one main-stream MQTT gateway used in the kit.</p><li><p>The benchmark is complex. Not explicit pluggablity and extensibility in the benchmark kit. If a benchmark is hard to repeat, it just makes nonsense.</p></ol><h1 id=pstations-in-oidbs-comes>Pstations in OIDBS Comes</h1><img alt="Power Grid" class=img-fluid src=/imgs/blog/pstations/grid1.jpg><p align=center>Do you know the power grid of California has 3,200 power substations in around 2017?<p><p>Pstations is an OIDBS model adapted from the power substations model of TPCx-IoT. The workflow of benchmark framework is still that of OIDBS, but the data features and scenarios are based on those power substations.<p><code>Pstations</code> model is simple actually. Let us do a concise understanding via the following schema creation SQL:<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span style=color:#b48ead;>create table </span><span>benchmark.</span><span style=color:#8fa1b3;>pstations
+</span><span>(
+</span><span>    station_id UInt32,
+</span><span>    sensor_id UInt8,
+</span><span>    sensor_kind UInt8,
+</span><span>    sensor_value Float32,
+</span><span>    ts </span><span style=color:#b48ead;>DateTime
+</span><span>)
+</span><span>partition BY ymdh(ts);
+</span></code></pre><p>Here, the schema is only for understanding model because from the message to the table record is simply a 1-1 mapping.<p>The model <code>pstations</code> contains 5 fields: station_id, sensor_id, sensor_kind, sensor_value and ts. The model objects consists of two-level object: stations(the short of substations) and sensors. In a real-world configurations, it may have thousands of stations, and hundreds of sensors. <strong>This means that it is very reasonable for even 1 million sensoring points per second.</strong> This is the biggest characteristic of the TPCx-IoT model which has been reserved by <code>pstations</code>.<p>In the model <code>pstations</code>, we use a maximum flexibility schema. That is, the type of sensor is recorded by the sensor_kind field. So, you can extend sensor types as much as possible (here, is limit to max 256 by UInt8 type).<p>One point is that it is possible to use Enum-like types here. But the Enum-like type is a database concept, other IoT data systems, like message brokers, do not have such concept. So, for no barriers to understanding for all users, we just use the plain integer ids to represent the objects in the model.<p>Get more details from the sources of <a href=https://github.com/open-joinbase/oidbs>the OIDBS project</a>.<h3 id=how-to-use>How to Use</h3><p>Just a one-liner is used to generate a CSV format pstations model data file:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>oidbs</span><span> -- gen OUTPUT_PATH -w 1 -i 2 -m '</span><span style=color:#a3be8c;>{"num_sensors":2,"num_stations":4}</span><span>' -o
+</span></code></pre><p>Here is the table of parameters:<table><thead><tr><th style="text-align: left">parameter<th style="text-align: left">meanings<tbody><tr><td style="text-align: left">OUTPUT_PATH<td style="text-align: left">the only mandatory parameter for output file path, please change to your own path.<tr><td style="text-align: left">-w<td style="text-align: left">the number of generation workers. <br>In the same time, it decides the number of output files, then decides the ingesting/importing concurrency.<tr><td style="text-align: left">-i<td style="text-align: left">the time interval per worker to gen in seconds, the default is 1 second. Note that the time interval is per worker means that different workers generate the records in different time spans.<tr><td style="text-align: left">-m<td style="text-align: left">the model parameters, in the model specific json string format, the default is empty json object. <br>In the <code>pstations</code> model, there are two model parameters: num_sensors and num_stations. We can not specific these parameters in advance in the fixed parameter list, because the number of models is unlimited.<tr><td style="text-align: left">-o<td style="text-align: left">the flag to enable output out of order. <br>It doesn't make much sense for the brokers, because brokers do not care the ordering of messages before their incoming. <br>This is mainly for benching the end-to-end data stack with databases in the pipeline. We will demonstrate out-of-order messaging could have a huge performance impact on databases in the pipeline in the future.</table><h3 id=pstations-edge-100m>Pstations Edge-100m</h3><p>Recently, we are preparing an <a href=/ranking><strong>Edge Data Stack Capabilities Ranking</strong></a> for the world (WIP). The interesting results will be discussed in that dedicated page when comes out.<p>Because from low-end SBCs(Single-board computers) to high-end edge nodes, the performance gap is two or more orders of magnitude. The existed external NYC taxi dataset model is either too big or too small. That's exactly what <code>pstations</code> came to solve.<p>Here, we just proposed a <code>pstations edge-100m</code> for the edge scenarios, which could be generated with the following OIDBS command:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>oidbs</span><span> -- gen OUTPUT_PATH -w 10000 -i 100 -m '</span><span style=color:#a3be8c;>{"num_sensors":10,"num_stations":10}</span><span>' -o
+</span></code></pre><p>here, we have ten sensors in every ten stations will generate 10000 files with 100 seconds time in the echo file's time span. The total rows of records in the <code>pstations edge-100m</code> is 100 millions which is the stem of edge-100m naming.<h1 id=demo>Demo</h1><div class="row justify-content-center text-center"><div id=jb1m></div><script src=/asciinema-player.min.js></script><script>AsciinemaPlayer.create('/casts/pstations.cast', document.getElementById('jb1m'), { preload: true, autoPlay: true });</script><p>Tips: you can copy the command from the cast, paste the command into your shell to execute!</div><p>Here, it is interesting to find that we generate the 3.4GB <code>pstations edge-100m</code> dataset in 3.88s in this machine. A modern tool built for the modern hardwares makes our lives easier!<p>Please see <a href=/blog/intro-oidbs/#demo>the demo in the introduction article</a> about how to import the generated model's data against your MQTT brokers or IoT data stacks like JoinBase.<h1 id=outlook>Outlook</h1><p>The <code>pstations</code> model can be strengthened in some places. For example, we use a biased random data distribution for the fields, maybe more distributions could be tested. In the future, we hope more real-world inspired models can be added into the OIDBS to make benchmarks covering more dedicated scenarios.<p>One of most important near episodes is the upcoming <a href=/ranking><strong>Edge Data Stack Capabilities Ranking</strong></a>. The capabilities of edge computing systems will be rolled out within modern IoT data stack perspectives, from the smallest 4.2cm*4.2cm SBC to the largest hundreds-of-cores bare metal server.</article></div></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>

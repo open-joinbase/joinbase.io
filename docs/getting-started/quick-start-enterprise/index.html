@@ -1,0 +1,121 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>Quick Start for Enterprise | JoinBase</title><meta content="Quick Start" name=description><link href=https://joinbase.io/docs/getting-started/quick-start-enterprise/ rel=canonical><meta content="Quick Start for Enterprise" property=og:title><meta content="Quick Start" property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/docs/getting-started/quick-start-enterprise/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2021-05-01T08:20:00+00:00 property=og:updated_time><meta content="Quick Start for Enterprise" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://joinbase.io/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Getting Started",
+            "item": "https://joinbase.io/docs/getting-started/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Quick Start Enterprise",
+            "item": "https://joinbase.io/docs/getting-started/quick-start-enterprise/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class=nav-item><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>Getting Started</h3><ul class=list-unstyled><li><a class=docs-link href=https://joinbase.io/docs/getting-started/introduction/>Introduction</a><li><a class="docs-link active" href=https://joinbase.io/docs/getting-started/quick-start-enterprise/>Quick Start for Enterprise</a><li><a class=docs-link href=https://joinbase.io/docs/getting-started/quick-start-cloud/>Quick Start for Cloud</a></ul><h3>Reference</h3><ul class=list-unstyled><li><a class=docs-link href=https://joinbase.io/docs/references/concept/>Concepts</a><li><a class=docs-link href=https://joinbase.io/docs/references/install/>Installation</a><li><a class=docs-link href=https://joinbase.io/docs/references/conf/>Configuration</a><li><a class=docs-link href=https://joinbase.io/docs/references/mgmt/>Management</a><li><a class=docs-link href=https://joinbase.io/docs/references/lang/>Language</a><li><a class=docs-link href=https://joinbase.io/docs/references/topics/>Topics</a><li><a class=docs-link href=https://joinbase.io/docs/references/mapping/>Payload Mapping</a><li><a class=docs-link href=https://joinbase.io/docs/references/mqtt/>MQTT Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/http/>HTTP Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/websocket/>WebSocket Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/postgresql/>PostgreSQL Interface</a><li><a class=docs-link href=https://joinbase.io/docs/references/extensions/>Extensions</a><li><a class=docs-link href=https://joinbase.io/docs/references/performance/>Performance Tips</a><li><a class=docs-link href=https://joinbase.io/docs/references/ha/>High Availability</a><li><a class=docs-link href=https://joinbase.io/docs/references/advanced/>Advanced Features</a><li><a class=docs-link href=https://joinbase.io/docs/references/glossary/>Glossary</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#get-joinbase-enterprise>Get JoinBase Enterprise</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#config-and-start-server>Config and Start Server</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#add-users>Add Users</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#connect-to-joinbase>Connect to JoinBase</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#create-table>Create Table</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#ingest-message>Ingest Message</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#make-the-query>Make the Query</a><li><a href=https://joinbase.io/docs/getting-started/quick-start-enterprise/#go-further>Go Further</a></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-10"><h1>Quick Start for Enterprise</h1><p class=lead>Just make your first query in one minute!<h2 id=get-joinbase-enterprise>Get JoinBase Enterprise</h2><p>All individuals or companies are welcome to request the free JoinBase Enterprise via the <a href=/request>page</a>.<p>To quickly prepare JoinBase, see more in <a href=/docs/references/install/>Installation</a> page.<h2 id=config-and-start-server>Config and Start Server</h2><p>The only item in conf file you should change in the first time is:<ul><li>directories of your data, schema and WAL(Write-Ahead Logging).</ul><pre style=background-color:#2b303b;color:#c0c5ce;><code><span>meta_dirs = ["path_to_your_meta_dir"]
+</span><span>data_dirs = ["path_to_your_data_dir"]
+</span><span>wal_dir = "path_to_your_wal_dir"
+</span><span>log_dir = "path_to_your_log_dir"
+</span></code></pre><p>See more about config in <a href=/docs/references/conf/>Configuration</a> page.<p>After the config, you can start the JoinBase's server from the root directory of JoinBase by:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>joinbase_start
+</span></code></pre><p>See more about management and administration in <a href=/docs/references/mgmt/><code>Management</code></a> page.<blockquote><p>🔍<p>Use <code>tail -f</code> to track your log in the directory of above <code>log_dir</code>(path_to_your_log_dir)</blockquote><h2 id=add-users>Add Users</h2><p>JoinBase system follows the philosophy of whitelist. Even you have started a server, you can do nothing if you do not explicit allow.<p>So, in the next step, you should add some user via our <a href=/docs/references/mgmt#base_admin><code>base_admin</code></a> tool.<p>The following subcommand <code>create_user</code> creates a user with a demo username <code>abc</code> and password <code>abc</code>:<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>base_admin</span><span> create_user abc abc
+</span></code></pre><blockquote><p>🔍<p>It is recommend that you should not provide the input in the password position. If the password is not provided, the command will request you to provide a password in a non-displayed style.</blockquote><h2 id=connect-to-joinbase>Connect to JoinBase</h2><p>After setup an <code>abc</code> user, You can use this user to connect to our PostgreSQL wire protocol compatible server.<pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>psql -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -p</span><span> 5433</span><span style=color:#bf616a;> -U</span><span> abc
+</span></code></pre><p>JoinBase's own language choose to support more intuitive MySQL style management statements rather than PostgreSQL's <code>\</code> starting command, although JoinBase supports PostgreSQL's clients.<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>show databases;
+</span><span>use system;
+</span><span>show tables;
+</span></code></pre><p>See more about JoinBase language in <a href=/docs/references/lang/>Language</a> page.<blockquote><p>🔍<p>append <code>-d db_name</code> to psql to make psql connected to that database in default.</blockquote><blockquote><p>🔍<p>Each login has a log. If the import or write does not generate a log, check whether the port is occupied by other services.</blockquote><h2 id=create-table>Create Table</h2><p>There is nothing interesting unless we have some tables for writing data to or reading data from.<p>The structure of JoinBase table is directly mapping from the MQTT message. By the mapping, the json payload of one MQTT message will be extracted and saved into the targeted table. See more about mapping of MQTT messages in <a href=/docs/references/mqtt/>MQTT Messages</a> page.<p>Let's create a database and a table to store the data.<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span style=color:#b48ead;>create database </span><span style=color:#8fa1b3;>abc</span><span>;
+</span><span>use abc;
+</span></code></pre><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span style=color:#b48ead;>CREATE TABLE </span><span>IF NOT EXISTS </span><span style=color:#8fa1b3;>t
+</span><span>(
+</span><span>    a Nullable(UInt32),
+</span><span>    b Int64
+</span><span>);
+</span></code></pre><p>Note, the above statement is for demo. You should use a partition schema for a big sized table.<p>See more about <a href=/docs/references/concept#partition><code>Partition</code></a> and <a href=/docs/references/lang#create_table><code>create table</code></a> page.<h2 id=ingest-message>Ingest Message</h2><p>Now, we can do a test query for the new table.<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>abc=> </span><span style=color:#b48ead;>select </span><span style=color:#bf616a;>* </span><span style=color:#b48ead;>from </span><span style=color:#d08770;>abc</span><span>.</span><span style=color:#d08770;>t</span><span>;
+</span><span style=color:#b48ead;>SELECT </span><span style=color:#d08770;>0
+</span></code></pre><p>Yes. There is no data in the new table <code>t</code>. Let's inject a sample data into the table.<p>You can use all provided interfaces to ingest the data. For example:<ol><li>HTTP interface</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>curl -s -H </span><span>'</span><span style=color:#a3be8c;>X-JoinBase-User: abc</span><span>'</span><span style=color:#bf616a;> -H </span><span>'</span><span style=color:#a3be8c;>X-JoinBase-Key: abc</span><span>'</span><span style=color:#bf616a;>  -X</span><span> POST '</span><span style=color:#a3be8c;>http://127.0.0.1:8080/abc/t</span><span>'</span><span style=color:#bf616a;> -d </span><span>'</span><span style=color:#a3be8c;>1,2</span><span>'
+</span></code></pre><p>The <code>curl</code> is one popular HTTP client tool. See more in <a href=/docs/references/http/>HTTP Interface</a> page.<ol start=2><li>MQTT interface</ol><pre class=language-bash data-lang=bash style=background-color:#2b303b;color:#c0c5ce;><code class=language-bash data-lang=bash><span style=color:#bf616a;>mosquitto_pub -d -t</span><span> /abc/t</span><span style=color:#bf616a;> -h</span><span> 127.0.0.1</span><span style=color:#bf616a;> -u</span><span> abc</span><span style=color:#bf616a;> -P</span><span> abc</span><span style=color:#bf616a;> -m </span><span>'</span><span style=color:#a3be8c;>{"a":1,"b":2}</span><span>'
+</span></code></pre><p>The <code>mosquitto_pub</code> is a 3rd party MQTT client tool from <a href=https://mosquitto.org/>Eclipse Mosquitto</a>. See more in <a href=/docs/references/mqtt/>MQTT Interface</a> page.<ol start=3><li>PostgreSQL interface</ol><pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span style=color:#b48ead;>INSERT INTO </span><span style=color:#d08770;>abc</span><span>.</span><span style=color:#d08770;>t </span><span style=color:#b48ead;>VALUES</span><span> (</span><span style=color:#d08770;>1</span><span>,</span><span style=color:#d08770;>2</span><span>)
+</span></code></pre><p>This statement is issued from the PostgreSQL's official console <code>psql</code>. See more in <a href=/docs/references/postgresql/>PostgreSQL Interface</a> page.<blockquote><p>🔍<p>Use latest tools to avoid potential compatibility problems.</blockquote><h2 id=make-the-query>Make the Query</h2><p>Let's go back for the first query again:<pre class=language-sql data-lang=sql style=background-color:#2b303b;color:#c0c5ce;><code class=language-sql data-lang=sql><span>abc=> </span><span style=color:#b48ead;>select </span><span style=color:#bf616a;>* </span><span style=color:#b48ead;>from </span><span style=color:#d08770;>abc</span><span>.</span><span style=color:#d08770;>t</span><span>;
+</span><span>  a  |  b  
+</span><span style=color:#65737e;>-----+-----
+</span><span>   </span><span style=color:#d08770;>1</span><span> |   </span><span style=color:#d08770;>2
+</span><span>(</span><span style=color:#d08770;>1</span><span> row)
+</span></code></pre><p>Wow!<h2 id=go-further>Go Further</h2><p>Congrats for finishing the first query on the JoinBase! Yes, compared with traditional databases or big data platforms, the use of base is super simple!<p>You may want to understand more about JoinBase. <a href=/docs/references/concept/>Concept →</a><div class="docs-navigation d-flex justify-content-between"><a class=ms-auto href=https://joinbase.io/docs/references/concept/> <div class="card my-1"><div class="card-body py-2">Concepts →</div></div> </a></div></main></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>

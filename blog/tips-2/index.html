@@ -1,0 +1,103 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><style>/* latin */
+    @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      src: url(/fonts/rubik.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      font-family: "Rubik";
+    }</style><link href=/css/line-awesome.min.css rel=stylesheet><link href=/asciinema-player.css rel=stylesheet><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin=anonymous href=https://joinbase.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://joinbase.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><title>JoinBase Tips Series #2: Using HTTP Interface in JoinBase | JoinBase</title><meta content="JoinBase, a single-binary AIoT-first data-service platform." name=description><link href=https://joinbase.io/blog/tips-2/ rel=canonical><meta content="JoinBase Tips Series #2: Using HTTP Interface in JoinBase" property=og:title><meta content="JoinBase, a single-binary AIoT-first data-service platform." property=og:description><meta content=article property=og:type><meta content=https://joinbase.io/blog/tips-2/ property=og:url><meta content=tb-logo.png property=og:image><meta content=2023-03-03T12:00:00+00:00 property=og:updated_time><meta content="JoinBase Tips Series #2: Using HTTP Interface in JoinBase" property=og:site_name><meta content=en_US property=og:locale><script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/blog/tips-2/"
+      },
+      "headline": "JoinBase Tips Series #2: Using HTTP Interface in JoinBase",
+      "image": ,
+      "datePublished": "2023-02-23T12:00:00+00:00",
+      "dateModified": "2023-03-03T12:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "JoinBase Tips Series #2: Using HTTP Interface in JoinBase"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoinBase Tips Series #2: Using HTTP Interface in JoinBase",
+        
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/tb-logo.png"
+        }
+        
+      },
+      "description": "JoinBase, a single-binary AIoT-first data-service platform."
+    }
+    </script><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://joinbase.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Blog",
+            "item": "https://joinbase.io/blog/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Tips 2",
+            "item": "https://joinbase.io/blog/tips-2/"
+          },
+        
+      
+    
+  }
+</script><meta content=#000 name=theme-color><link href=/joinbase_logo_180.png rel=apple-touch-icon sizes=180x180><link href=/joinbase_logo_32.png rel=icon sizes=32x32 type=image/png><link href=/joinbase_logo_16.png rel=icon sizes=16x16 type=image/png><body class="blog single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://joinbase.io>JoinBase</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class=nav-item><a class=nav-link href=https://github.com/open-joinbase/JoinBase><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a><li class=nav-item><a class=nav-link href=https://twitter.com/joinbase_db><svg class="feather feather-twitter" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://joinbase.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://joinbase.io/products/>Products</a><li class="nav-item blog active"><a class=nav-link href=https://joinbase.io/blog/>Blog</a><li class=nav-item><a class=nav-link href=https://joinbase.io/benchmark/>Benchmark</a><li class=nav-item><a class=nav-link href=https://joinbase.io/ranking/>Ranking</a><li class=nav-item><a class=nav-link href=https://joinbase.io/community/>Communities</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row justify-content-center"><div class="col-md-12 col-lg-12 col-xl-12"><article><div class=blog-header><h1>JoinBase Tips Series #2: Using HTTP Interface in JoinBase</h1><p><small>Posted February 23, 2023 by <a class="stretched-link position-relative" href=https://joinbase.io/contact/jblchen/>jblchen</a> ‐ <strong>5 min read</strong></small><p></div><p class=lead>In JoinBase 2022.12, we introduced the HTTP interface, making JoinBase a general-purpose multi-protocol time series data service platform.<p>Among the existing databases, there are very few databases that can natively support the HTTP interface. This brings up a problem: If users want to provide REST services based on these databases, they need to combine other HTTP services on top of the existing databases.<h1 id=basic-knowledge>Basic knowledge</h1><h3 id=http-api>HTTP API</h3><p>First introduce the concept of API, Application Programming Interface (application programming interface) is its full name. The simple understanding is that API is an interface. So what kind of interface is it? Now we often regard it as an HTTP interface, that is, HTTP API. That is to say, this interface has to be called through HTTP.<p>Say we have an application that allows us to view, create, edit and delete widgets, we can create HTTP APIs that allow us to perform these functions.<p>But what's the inconvenience of doing this? This way of writing the API has a disadvantage, that is, there is no unified style, which will cause other people who use our interface to have to refer to the API to know how it works.<p>Don't worry, REST will solve this problem for us.<h3 id=what-is-rest>What is REST?</h3><p>With the above introduction, you may also have an intuitive understanding. To put it bluntly, <strong>REST is a style!</strong><p>The role of REST is to directly map the view (view), create (create), edit (edit) and delete (delete) we mentioned above to the <strong>GET, POST, PUT and DELETE</strong> methods that have been implemented in HTTP.<p>After this change, the API becomes unified, and we only need to change the request method to complete related operations, which greatly simplifies the difficulty of understanding our interface and becomes easy to call.<p><strong>That's what REST is all about!</strong><h1 id=preparation>Preparation</h1><p>The HTTP interface is JoinBase's effort to facilitate the user's end-to-end experience.<p>First, refer to our quick start tutorial, create a JoinBase account, and complete the operations in the article.<p>After you follow the above steps, simple data is inserted into JoinBase.<p>Also don't forget to execute the following command to install curl, which is a prerequisite for us to use the HTTP interface.<pre style=background-color:#2b303b;color:#c0c5ce;><code><span>sudo snap install curl
+</span></code></pre><h1 id=use-the-http-interface>Use the HTTP interface</h1><p>At this point, let's experience the HTTP interface. This section will demonstrate a simple REST-based process for reading and writing.<p>Enter the above command to see our previous table creation<div class=text-center><img alt=table class=img-fluid src=/imgs/blog/tips_2/table.png><p align=center><p></div><p>Let's change the way and enter the following command to view the previously created table using the HTTP interface<pre style=background-color:#2b303b;color:#c0c5ce;><code><span>curl -s -H 'X-JoinBase-User: tips' -H 'X-JoinBase-Key: 123456' -X GET 'http://127.0.0.1:8080/?database=jb_tips' -d 'desc table t'|json_pp;
+</span></code></pre><p>got the answer:<div class=text-center><img alt=HTTP_table class=img-fluid src=/imgs/blog/tips_2/HTTP_table.png><p align=center><p></div><p>Similarly, enter the following commands to use the HTTP interface to insert data into the database.<p>Now, we insert the data "3,4":<pre style=background-color:#2b303b;color:#c0c5ce;><code><span>curl -s -H 'X-JoinBase-User: tips' -H 'X-JoinBase-Key: 123456'  -X POST 'http://127.0.0.1:8080/jb_tips/t' -d '3,4
+</span></code></pre><p>Next, let's try query operations.<p>Execute the following commands to query.<pre style=background-color:#2b303b;color:#c0c5ce;><code><span>curl -s -H 'X-JoinBase-User: tips' -H 'X-JoinBase-Key: 123456' -X GET 'http://127.0.0.1:8080/?database=jb_tips' -d 'select * from jb_tips.t'|json_pp;
+</span></code></pre><p>note: "|json_pp" at the end of this command can help us <strong>see the query results more intuitively</strong> in the format of the json file . If not used, the query results will be presented in this form:<pre style=background-color:#2b303b;color:#c0c5ce;><code><span>[{"a":1,"b":2},{"a":3,"b":4}]
+</span></code></pre><p>As you can see, the result of such a query is not intuitive.<p>Therefore, we should pay attention to adding when we want to see the query results; in addition, I believe some friends have also noticed that it is not used in the command to insert data, because we do not need to view it when inserting data.<p>After executing the previous command, the query result will be displayed in the following figure:<div class=text-center><img alt=result class=img-fluid src=/imgs/blog/tips_2/result.png><p align=center><p></div><p>Obviously, compared with the other results, this query result is very clear and easy for beginners to understand.<p>Congratulations, you have a preliminary understanding of the basic operations of the HTTP interface in JoinBase!<h1 id=and-one-more-thing>And one more thing</h1><p>JoinBase provides a lot of value beyond the peers of this era. We sincerely invite more users to join our community. JoinBase can help you!<p>Download JoinBase: <a href=https://joinbase.io/products/>Download</a> the full-featured version of JoinBase and SmartBase for free now , so that your AIoT digital capabilities will be one step ahead.<p>JoinBase Global Community: <a href=https://github.com/open-joinbase/joinbase>Github Global Community</a><p>JoinBase Chinese Community: <a href=https://joinbase.io/community/>WeChat Group</a><p>JoinBase Discord Server: <a href=https://discord.com/invite/sqX6vfnURj>Discord</a></article></div></div></div></div><footer class="site-footer text-muted"><div class=container><div class=row><div class="d-flex justify-content-between"><div class="col-sm-12 col-md-6"><h5>JoinBase</h5><p class=text-justify>A single-binary AIoT-first data-service platform.</div><div class="col-xs-6 col-md-2"></div><div class="col-xs-6 col-md-2"><h6>JoinBase</h6><ul class=footer-links><li><a href=#>Cloud</a><li><a href=/blog/>Blog</a><li><a href=/careers/>Careers</a><li><a href=/contact/>Contact</a><li><a href=/request/>Request</a></ul></div><div class="col-xs-6 col-md-2"><h6>Community</h6><ul class=footer-links><li><a href=https://github.com/open-joinbase/joinbase>GitHub</a><li><a href=https://www.youtube.com/channel/UCGCDg4je1pCTrtqU4dHiO1A>YouTube</a><li><a href=https://discord.gg/sqX6vfnURj>Discord</a><li><a href=https://twitter.com/joinbase_db>Twitter</a><li><a href=/community/>Communities</a></ul></div><div class="col-xs-6 col-md-2"><h6>More</h6><ul class=footer-links><li><a href=/docs/getting-started/>Get Started</a><li><a href=/docs/getting-started/introduction/>Documentation</a><li><a href=/benchmark/>Benchmark</a><li><a href=/docs/getting-started/tutorials/>Tutorials</a><li><a href=/community/>Community</a></ul></div></div></div></div><div class=container><div class="d-flex justify-content-between"><div><p class=copyright-text>Copyright © 2021 - 2022 <a href=#>JoinBase</a></div><div><p class=copyright-text><a href=/privacy-policy/>Privacy</a></div></div></div><script src="https://www.googletagmanager.com/gtag/js?id=G-6P71GFWL9M" async></script><script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6P71GFWL9M');</script></footer><script defer src=https://joinbase.io/js/main.js></script><script defer src=https://joinbase.io/plugins/elasticlunr.min.js></script><script defer src=https://joinbase.io/search_index.en.js></script><script defer src=https://joinbase.io/js/search.js></script>
